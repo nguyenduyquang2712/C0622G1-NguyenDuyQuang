@@ -2,33 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> Tạo form đơn giản </title>
-
+    <title>Hello</title>
+    <style>
+        span {
+            color: blue;
+        }
+        label {
+            color: orangered;
+        }
+    </style>
 </head>
-<body>
-<form  action=" http://demo.codegym.vn/6/registration_form/register.php" method="post" >
-    <h1 style="text-align: center;background-color:orangered; color: white;margin-right:300px;margin-left: 300px">SỞ THÍCH CỦA BẠN</h1>
-    <lable style="color:blue;font-size: x-large;position: relative;left: 400px  ">Họ và tên</lable>
-    <input type="text" name="your name" size="38" style="position: relative;left: 400px"/><br>
-    <lable style="color: blue;font-size: x-large; position: relative; left:435px">Email</lable>
-    <input style="position: relative; left:437px" type="text" name="email" size="25"/><br>
-    <lable style="color: blue;font-size: x-large;position: relative; left:415px">Sở thích</lable>
-    <label style="color: orange;position: relative; left:411px">
-        <input name="hobby" value="sport" type="checkbox"/> Thể thao</label>
-    <label style="color: orange;position: relative; left:416px">
-        <input name="hobby" value="music" type="checkbox"/> Âm nhạc</label>
-    <label style="color: orange;position: relative; left:429px">
-        <input name="hobby" value="reading" type="checkbox"/> Đọc sách</label><br/>
-    <label style="color: orange;position: relative; left:495px">
-        <input name="hobby" value="web" type="checkbox"/> Lướt web</label>
-    <label style="color: orange;position: relative; left:495px">
-        <input name="hobby" value="game" type="checkbox"/> Chơi game</label>
-    <label style="color: orange;position: relative; left:495px">
-        <input name="hobby" value="film" type="checkbox"/> Điện ảnh</label><br>
-    <label style="color: orange;position: relative; left:495px">
-        <input name="hobby" value="travel" type="checkbox"/> du lịch</label><br><br/>
-    <input style="position: relative; left:495px" type="submit" value="Gửi thông tin"/>
-    <input style="position: relative; left:495px" type="reset" value="Nhập lại"/>
-</form>
+<body >
+<table style="margin-right:auto;margin-left: auto;width: 40%" >
+    <tr>
+        <th style="background-color: orangered;color: white" colspan="4" ><p style="font-size: large">SỞ THÍCH CỦA BẠN</p></th>
+    </tr>
+    <tr>
+        <td style="text-align: right"><span>Họ và tên</span></td>
+        <td colspan="3"><input type="text " name="name" size="40"></td>
+    </tr>
+    <tr>
+        <td style="text-align: right"><span>Email</span></td>
+        <td colspan="3"><input type="text" name="email"></td>
+    </tr>
+    <tr>
+        <td style="text-align: right"><span>Sở thích</span></td>
+        <td><label><input type="checkbox" name="sport"/>Thể thao</label></td>
+        <td><label><input type="checkbox" name="music"/>Âm nhạc</label></td>
+        <td><label><input type="checkbox" name="reading"/>Đọc sách</label></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><label><input type="checkbox" name="web"/>Lướt web</label></td>
+        <td><label><input type="checkbox" name="game"/>Chơi game</label></td>
+        <td><label><input type="checkbox" name="musix"/>Âm nhạc</label></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><label><input type="checkbox" name="travel"/>Du lịch</label></td>
+    </tr>
+</table>
 </body>
 </html>
