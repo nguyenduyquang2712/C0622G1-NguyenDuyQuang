@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th style="text-align: left" colspan="4">Caculator</th>
+    </tr>
+    <tr>
+        <td colspan="2"><input id="num1" type="number"></td>
+        <td colspan="2"><input id="num2" type="number>"/></td>
+    </tr>
+    <tr>
+        <td><button type="button" id="1">Addition(+)</button></td>
+        <td><button type="button" id="2">Subtraction(-)</button></td>
+        <td><button type="button" id="3">Multiplication(*)</button></td>
+        <td><button type="button" id="4"/>Division(/)</td>
+    </tr>
+</table>
+<p id="res"></p>
+<script>
+    var clickelement = document.getElementById("1");
+    clickelement.addEventListener("click", add);
+    function add()
+    {
+        let result = parseInt(document.getElementById("num1").value) + parseInt(document.getElementById("num2").value);
+        document.getElementById("res").innerHTML = result;
+
+
+    }
+    var clickelement = document.getElementById("2");
+    clickelement.addEventListener("click", sub);
+    function sub()
+    {
+        let result = parseInt(document.getElementById("num1").value) - parseInt(document.getElementById("num2").value);
+        document.getElementById("res").innerHTML = result;
+    }
+    var clickelement = document.getElementById("3");
+    clickelement.addEventListener("click", multi);
+    function multi() {
+        let result = parseInt(document.getElementById("num1").value) * parseInt(document.getElementById("num2").value);
+        document.getElementById("res").innerHTML = result;
+    }
+    var clickelement = document.getElementById("4");
+    clickelement.addEventListener("click", div);
+    function div() {
+        let result = parseInt(document.getElementById("num1").value) / parseInt(document.getElementById("num2").value);
+        document.getElementById("res").innerHTML = result;
+    }
+
+</script>
+</body>
+</html>
+</body>
+</html>

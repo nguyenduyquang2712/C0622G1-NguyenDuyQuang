@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount &emsp; &emsp;</th>
+        <th style="text-align: center">From Currency &emsp; &emsp;</th>
+        <th style="text-align: center">To Currency &emsp; &emsp;</th>
+    </tr>
+    <tr>
+        <td><input  type="number" name="amount" id="money"></td>
+        <td style="text-align: center"><select name="country" id="ct1">
+            <option value="VND">VietNam</option>
+            <option value="USD">USD</option>
+
+        </select>
+        </td>
+        <td style="text-align: center">
+            <select name="country1" id="ct2">
+                <option value="USD">USD</option>
+                <option value="VND">VietNam</option>
+            </select>
+        </td>
+        <td><button onclick="do_something()">convert</button></td>
+    </tr>
+</table>
+<p id="hienthi"></p>
+</body>
+    <script>
+        function do_something() {
+            let amount = document.getElementById('money').value;
+            let value1 = document.getElementById('ct1').value;
+            let value2 = document.getElementById('ct2').value;
+            let result = 0;
+            if (value1 != value2) {
+                if (value1 == "VND") {
+                    result = (amount / 23000);
+                } else {
+                    result = (amount * 23000);
+                }
+            }
+            else  result = amount
+            document.getElementById("hienthi").innerHTML = "giá trị chuyển đổi là: "+ result +" " +value2;
+        }
+    </script>
+</html>

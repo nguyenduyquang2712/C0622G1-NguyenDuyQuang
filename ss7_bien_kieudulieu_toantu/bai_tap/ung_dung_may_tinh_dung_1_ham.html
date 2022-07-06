@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th style="text-align: left" colspan="4">Caculator</th>
+    </tr>
+    <tr>
+        <td colspan="2"><input id="num1" type="number"></td>
+        <td colspan="2"><input id="num2" type="number"></td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" onclick="do_something(1)">Addition(+)</button>
+        </td>
+        <td>
+            <button type="button" onclick="do_something(2)">Subtraction(-)</button>
+        </td>
+        <td>
+            <button type="button" onclick="do_something(3)">Multiplication(*)</button>
+        </td>
+        <td>
+            <button type="button" onclick="do_something(4)">Division(/)</button>
+        </td>
+    </tr>
+</table>
+<p id="res"></p>
+</body>
+<script>
+    function do_something(i) {
+        let result = 0;
+        if (i == 1) {
+            result = (+document.getElementById("num1").value) + (+document.getElementById("num2").value);
+        } else {
+            if (i == 2) {
+                result = (+document.getElementById("num1").value) - (+document.getElementById("num2").value);
+            } else if (i == 3) {
+                result = (+document.getElementById("num1").value) * (+document.getElementById("num2").value);
+            } else result = (+document.getElementById("num1").value) / (+document.getElementById("num2").value)
+        }
+        document.getElementById("res").innerHTML = "Kết quả là: " +result;
+
+
+    }
+</script>
+</html>
