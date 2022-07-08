@@ -1,133 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
-<table style="width: 200px">
+<table>
     <tr>
-        <th colspan="4">
-            <input style="position: relative;right: 10px" type="text" id="show" size="20" disabled>
-        </th>
+        <td colspan="4"><input type="text" id="nhap"></td>
     </tr>
     <tr>
-        <td>
-            <button type="button" onclick="inputnum(1)">1</button>
-        </td>
-        <td>
-            <button type="button" onclick="inputnum(2)">2</button>
-        </td>
-        <td>
-            <button type="button" onclick="inputnum(3)">3</button>
-        </td>
-        <td>
-            <button style="width: 25px" type="button" onclick="inputnum(10)">+</button>
-        </td>
-        <td></td>
-    </tr>
-    <td>
-        <button type="button" onclick="inputnum(4)">4</button>
-    </td>
-    <td>
-        <button type="button" onclick="inputnum(5)">5</button>
-    </td>
-    <td>
-        <button type="button" onclick="inputnum(6)">6</button>
-    </td>
-    <td>
-        <button style="width: 25px" type="button" onclick="inputnum(11)">-</button>
-    </td>
-    <tr>
-        <td>
-            <button type="button" onclick="inputnum(7)">7</button>
-        </td>
-        <td>
-            <button type="button" onclick="inputnum(8)">8</button>
-        </td>
-        <td>
-            <button type="button" onclick="inputnum(9)">9</button>
-        </td>
-        <td>
-            <button style="width: 25px" type="button" onclick="inputnum(12)">x</button>
-        </td>
+        <td><input type="button" value="1" onclick="nhap(this.value)"></td>
+        <td><input type="button" value="2" onclick="nhap(this.value)"></td>
+        <td><input type="button" value="3" onclick="nhap(this.value)"></td>
+        <td><input type="button" value="+" onclick="nhap(this.value)"></td>
     </tr>
     <tr>
-        <td>
-            <button type="button" onclick="inputnum(14)">C</button>
-        </td>
-        <td>
-            <button type="button" onclick="inputnum(0)">0</button>
-        </td>
-        <td>
-            <button type="button" onclick="inputnum(15)">=</button>
-        </td>
-        <td>
-            <button style="width: 25px" type="button" onclick="inputnum(13)">/</button>
-        </td>
+        <td><input type="button" value="4" onclick="nhap(this.value)"></td>
+        <td><input type="button" value="5" onclick="nhap(this.value)"></td>
+        <td><input type="button" value="6" onclick="nhap(this.value)"></td>
+        <td ><input style="width: 23px" type="button" value="-" onclick="nhap(this.value)"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="7" onclick="nhap(this.value)"></td>
+        <td><input type="button" value="8" onclick="nhap(this.value)"></td>
+        <td><input type="button" value="9" onclick="nhap(this.value)"></td>
+        <td><input style="width: 23px"  type="button" value="*" onclick="nhap(this.value)"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="C" onclick="xoa()"></td>
+        <td><input type="button" value="=" onclick="bang()"></td>
+        <td><input type="button" value="0" onclick="nhap(this.value)"></td>
+        <td><input  style="width: 23px"  type="button" value="/" onclick="nhap(this.value)"></td>
     </tr>
 </table>
-<input type="hidden" id="Fin" value="0">
-</body>
 <script>
-    function inputnum(i) {
-        switch (i) {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-                if (document.getElementById("Fin").value == 1) {
-                    document.getElementById("show").value = i;
-                    document.getElementById("Fin").value = 0;
-                } else {
-                    document.getElementById("show").value += i;
-                }
-                break;
-            case 10:
-            case 11:
-            case 12:
-            case 13:
-            case 14:
-            case 15:
-                if (i == 10) {
-                    document.getElementById("show").value += "+";
-                   document.getElementById("Fin").value = 0;
-                } else {
-                    if (i == 11) {
-                        document.getElementById("show").value += "-";
-                        document.getElementById("Fin").value = 0;
-                    } else {
-                        if (i == 12) {
-                            document.getElementById("show").value += "*";
-                            document.getElementById("Fin").value = 0;
-
-                        } else {
-                            if (i == 13) {
-                                document.getElementById("show").value += "/";
-                               document.getElementById("Fin").value = 0;
-
-                            } else {
-                                if (i == 14) {
-                                    document.getElementById("show").value = onreset;
-                                } else document.getElementById("show").value = eval(document.getElementById("show").value);
-                                document.getElementById("Fin").value = 1;
-                            }
-
-
-                        }
-                    }
-
-                }
-                break;
+    let i=0;
+    function nhap(duLieu) {
+        let t = document.getElementById("nhap").value;
+        document.getElementById("nhap").value += duLieu;
+        let str = (document.getElementById("nhap").value).toString();
+        let check1 = (str.charAt(i) == "+")||(str.charAt(i)=="-")||(str.charAt(i)=="*")||(str.charAt(i)=="/");
+        let check2 = (str.charAt(i-1) == "+")||(str.charAt(i-1)=="-")||(str.charAt(i-1)=="*")||(str.charAt(i-1)=="/");
+        if (check1 && check2 ){
+            document.getElementById("nhap").value = t; i=i-1;
         }
+        i=i+1;
     }
-
-
+    function bang() {
+        let str = document.getElementById("nhap").value;
+        let ketQua = eval(str);
+        document.getElementById("nhap").value = ketQua;
+        i= document.getElementById("nhap").value.length ;
+        // alert(i)
+    }
+    function xoa() {
+        document.getElementById("nhap").value= onreset; i=0;
+    }
 </script>
+</body>
 </html>
