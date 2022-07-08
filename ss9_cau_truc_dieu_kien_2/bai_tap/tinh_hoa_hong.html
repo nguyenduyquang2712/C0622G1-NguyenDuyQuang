@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--5% nếu tổng doanh số nhỏ hơn hoặc bằng 100 triệu.
+
+10% nếu tổng doanh số nhỏ hơn hoặc bằng 300 triệu.
+
+20 % nếu tổng doanh số là lớn hơn 300 triệu.-->
+Nhập doanh thu:<br>
+<input type="text" id="money">Triệu VND <br><br>
+<button type="button" onclick="checkMoney()">Check hoa hồng</button> <br>
+<p id="ketqua"></p>
+
+</body>
+<script>
+    function checkMoney() {
+        let myValue=0;
+        let amount = parseFloat(document.getElementById("money").value);
+        if (amount>300) {
+           myValue = (amount/100)*20;
+        } else {
+            if (amount>100) {
+                myValue = (amount/100)*10;
+            } else myValue = (amount/100)*5;
+        }
+        document.getElementById("ketqua").innerHTML = "Số hoa hồng nhận được là: "+myValue +""+"Triệu VND"
+
+    }
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Nhập số a: <input type="text" id="num1"> <br><br>
+Nhập số b: <input type="text" id="num2"> <br><br>
+
+<button type="button" onclick="check()">Check</button>
+
+</body>
+<script>
+    function check() {
+        let n1 = parseFloat(document.getElementById("num1").value);
+        let n2 = parseFloat(document.getElementById("num2").value);
+        if ( n1%n2 == 0){
+            alert ("a chia hết cho b");
+        } else {
+            alert ("a không chia hết cho b");
+        }
+
+    }
+</script>
+</html>

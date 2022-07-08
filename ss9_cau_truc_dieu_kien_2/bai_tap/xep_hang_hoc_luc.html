@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Nhập điểm kiểm tra: <br>
+<input type="text" id="mark1"> <br><br>
+Nhập điểm tra giữa kỳ:<br>
+<input type="text" id="mark2"> <br><br>
+Nhập điểm kiểm tra cuối kỳ:<br>
+<input type="text" id="mark3"> <br><br>
+<button type="button" onclick="check()">Check</button><br><br>
+<p id="showcheck"></p>
+
+
+
+</body>
+<script>
+    function check() {
+        let diemkt= parseFloat(document.getElementById("mark1").value);
+        let diemgiuaky = parseFloat(document.getElementById("mark2").value);
+        let diemcuoiky = parseFloat(document.getElementById("mark3").value);
+        let avarage = (diemkt + diemgiuaky*2 +diemcuoiky*3)/6
+        if (avarage > 8.4 ){
+            document.getElementById("showcheck").innerHTML = "Xếp loại giỏi";
+        }else {
+            if (avarage > 7) {
+                document.getElementById("showcheck").innerHTML = "Xếp loại khá";
+            } else {
+                if (avarage>5.5){
+                    document.getElementById("showcheck").innerHTML = "Xếp loại trung bình";
+                } else {
+                    document.getElementById("showcheck").innerHTML = "Xếp loại yếu";
+                }
+            }
+        }
+    }
+
+</script>
+</html>

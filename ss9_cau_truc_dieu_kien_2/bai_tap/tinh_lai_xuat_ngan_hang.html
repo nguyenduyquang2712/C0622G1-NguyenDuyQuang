@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let monnth = parseInt(prompt("Nhập số tháng gửi"));
+    let amount = parseFloat(prompt("Nhập số tiền gửi"));
+    let orginAmount = amount ;
+    let interest = parseFloat(prompt("Nhập lãi xuất hàng tháng của ngân hàng"));
+    for (let i = 1; i < monnth; i++) {
+        amount = amount + amount * interest;
+    }
+    amount = amount-orginAmount;
+    alert("Số lãi nhận được là: " + amount + "" + "VND");
+</script>
+</body>
+</html>

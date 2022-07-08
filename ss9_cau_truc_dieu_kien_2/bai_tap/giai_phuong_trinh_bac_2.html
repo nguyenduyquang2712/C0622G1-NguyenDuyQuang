@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseFloat(prompt("Nhập hằng số a"));
+    let b = parseFloat(prompt("Nhập hằng số b"));
+    let c = parseFloat(prompt("Nhập hằng số c"));
+    let d = 0;
+    let d1 =0;
+    let d2=0;
+    let delta = Math.pow(b,2) - 4*a*c;
+    if (a==0){
+        if (b==0){
+            if (c==0){
+                alert("Phương trình có vô số nghiệm");
+            } else {
+                alert("Phương trình vô nghiệm");
+            }
+        } else { d = -c/a
+            alert("Phương trình có nghiệm là: "+d);
+        }
+    } else {
+        if (delta <0) {
+            alert("Phương trình vô nghiệm");
+        } else {
+            if (delta==0){
+                d= -b/(2*a);
+                alert("Phương trình có 1 nghiệm kép: "+d);
+            } else {
+                d1 = (-b+(Math.sqrt(delta)))/(2*a);
+                d2 = (-b-(Math.sqrt(delta)))/(2*a);
+                alert("Phương trình có 2 nghiệm là: "+""+d1+""+""+"và"+""+d2);
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

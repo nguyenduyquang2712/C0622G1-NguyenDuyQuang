@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Nhập cạnh kề a:(m) <br>
+<input type="number" id="length"><br><br>
+Nhập cạnh kề b:(m)<br>
+<input type="number" id="width"><br><br>
+<button type="button" onclick="calculate()">Caculate</button>
+<p id="result"></p>
+<script>
+    function calculate() {
+        let a = parseFloat(document.getElementById("length").value);
+        let b = parseFloat(document.getElementById("width").value);
+        let s = (a*b)/2;
+        document.getElementById("result").innerHTML = "Diện tích hình tam giác vuông là :" + s +"m<sup>2</sup>";
+    }
+</script>
+</body>
+</html>

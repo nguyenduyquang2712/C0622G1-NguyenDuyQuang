@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let value = parseFloat(prompt("Nhập số thu nhập (Triệu VND)"));
+    let tax=0;
+    if (value>80){
+        tax = (value/100)*35;
+    } else if (value>52){
+        tax = (value/100)*30;
+    } else if (value>32) {
+        tax = (value/100)*25;
+    } else if (value>18) {
+        tax = (value/100)*20;
+    } else if (value>10) {
+        tax = (value/100)*15;
+    } else if (value>5) {
+        tax = (value/100)*10;
+    } else {
+        tax = (value/100)*5;
+    }
+    alert("Thuế thu nhập cá nhân là: "+tax+""+" triệu VND");
+</script>
+</body>
+</html>

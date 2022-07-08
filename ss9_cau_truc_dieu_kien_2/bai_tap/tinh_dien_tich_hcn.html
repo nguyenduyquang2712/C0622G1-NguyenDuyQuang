@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập chiều dài hình chữ nhật:(m)</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" id="length"><br><br>
+<label>Nhập chiều rộng hình chữ nhật:(m)</label>&nbsp;<input type="number" id="width"><br>
+<button type="button" onclick="calculate()">CALCULATE</button>
+<p id="result"></p>
+<script>
+    function calculate() {
+        let a = parseFloat(document.getElementById("length").value);
+        let b = parseFloat(document.getElementById("width").value);
+        let s = a*b;
+        document.getElementById("result").innerHTML = "diện tích hình chữ nhật là :" + s +"m<sup>2</sup>";
+
+    }
+</script>
+</body>
+</html>
