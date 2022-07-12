@@ -7,12 +7,15 @@
 <body>
 <script>
     let showNumber = ""
-    for ( let i=1; i<100;i++)
+    for ( let i=1; i<=100;i++)
     {
-        show = show + "<br>"+i;
+        showNumber = showNumber + "<br>"+i;
+        if (i==99){
+            alert("Đã hoàn thành đếm tới 99");
+        }
     }
     document.write(showNumber);
-    alert("Đã hoàn thành đếm từ 1 đến 99");
+
 </script>
 </body>
 </html>
