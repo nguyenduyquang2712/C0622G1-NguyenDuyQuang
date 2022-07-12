@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let showNumber = "";
+    for (let i=1;i<=100;i++) {
+        if (!(i % 3) && !(i % 5)) {
+            showNumber = showNumber + "fizzbuzz" + " " + ",";
+        } else if (!(i%3)) {
+            showNumber = showNumber+ "fizz" +" "+",";
+        }
+         else if (!i%5) {
+            showNumber = showNumber+ "buzz"+" "+",";
+        } else
+        showNumber = showNumber +i+" "+",";
+    }
+    document.write(showNumber);
+</script>
+</body>
+</html>

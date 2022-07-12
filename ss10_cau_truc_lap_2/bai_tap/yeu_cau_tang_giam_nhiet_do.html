@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let temp = parseFloat(prompt("Nhiệt độ hiện tại của phòng"));
+    while (temp>100 || temp<20){
+        if (temp>100) {
+            alert ("Người dùng hãy giảm nhiệt độ");
+            temp = parseFloat(prompt("Người dùng hãy giảm nhiệt độ xuống:"));
+        } else {
+            alert("Người dùng hãy tăng nhiệt độ");
+            temp = parseFloat(prompt("Người dùng hãy tăng nhiệt độ lên:"))
+        }
+    }
+    alert("Nhiệt độ phòng ok");
+</script>
+</body>
+</html>

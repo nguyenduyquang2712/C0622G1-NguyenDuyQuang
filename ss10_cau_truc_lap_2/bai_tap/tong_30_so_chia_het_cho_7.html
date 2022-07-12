@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let sumNumber = 0;
+    for (let j=0,i=0;;i++){
+        if (!(i%7)){
+            j++;
+            sumNumber = sumNumber+i;
+        }
+        if (j==30){
+            break;
+        }
+    }
+    alert("Tổng 30 số đầu tiên chia hết cho 7 là: " +sumNumber);
+</script>
+</body>
+</html>

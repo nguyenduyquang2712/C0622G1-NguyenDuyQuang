@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let showNumber = "";
+    let sumNumber = 0;
+    let adject = 1;
+    for (let num=0, i=1; i<=20; i++){
+        num=adject+num;
+        adject = num-adject;
+        showNumber = showNumber +num+",";
+        sumNumber = sumNumber+num;
+    }
+    document.write(showNumber +"<br>"+"<br>");
+    document.write("Tổng 20 sô đầu tiên của dãy Fibonacci là: "+sumNumber);
+
+</script>
+</body>
+</html>

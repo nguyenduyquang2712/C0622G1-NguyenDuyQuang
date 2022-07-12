@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình in 20 số nguyên tố đầu tiên</title>
+</head>
+<body>
+<script>
+    let numbers = prompt("Nhập số lượng số nguyên tố cần tìm: ");
+    let i = 2;
+    let showNumber ="";
+    let amount =1;
+    while (amount<=numbers) {
+        let j =1;
+        let check = 0;
+        while (j<=i){
+            if (!(i%j)) {
+                check++
+            }
+            j++
+        }
+            if (check == 2){
+               showNumber = showNumber +i+"," ;
+                amount++;
+        }
+        i++;}
+
+    document.write(showNumber+"...");
+</script>
+</body>
+</html>

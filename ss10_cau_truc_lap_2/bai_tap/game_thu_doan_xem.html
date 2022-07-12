@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="playGame()">Chơi</button>
+</body>
+<script>
+    function playGame() {
+        let number = parseInt(prompt("Nhập vào sô mà bạn muốn đoán trong khoảng đó: "));
+        let randomNumber = Math.floor(Math.random() * number);
+        alert(randomNumber);
+        let guessNumber = parseInt(prompt("Nhập số mà bạn đoán"));
+        for (; ;) {
+            if (guessNumber == randomNumber) {
+                break;
+            } else if (guessNumber < randomNumber) {
+                alert("Số bạn đã nhập là bé hơn");
+                guessNumber = parseInt(prompt("Mời bạn nhập lại số"));
+            } else {
+                alert("Số bạn đã nhập là lớn hơn");
+                guessNumber = parseInt(prompt("Mời bạn nhập lại số"))
+            }
+        }
+        alert("Sô bạn đoán là chính xác, Trò chơi kết thúc");
+    }
+</script>
+</html>

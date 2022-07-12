@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let show = "";
+    let width = +prompt("Nhập chiều dài hình chữ nhật");
+    let height = +prompt("Nhập chiều rộng hình chữ nhật");
+    for (let i=1; i<=height; i++) {
+        for (let j=1; j<=width;j++) {
+            if ((i==1) || (i==height)) {
+                show = show+"*";
+            } else {if ( (j ==1) || (j==width)){
+            show = show+"*";} else {
+                show = show+"&nbsp&nbsp";
+            }
+            }
+        }
+        show = show +"<br>";
+    }
+    document.write(show);
+</script>
+</body>
+</html>

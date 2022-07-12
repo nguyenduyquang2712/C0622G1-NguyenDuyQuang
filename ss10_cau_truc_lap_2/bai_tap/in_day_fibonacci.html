@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let amount = +prompt("Nhập số lượng số trong dãy fibonacci cần in ra: ");
+    let showNumber = "";
+    let adject = 1;
+    for (let num=0, i=1; i<=amount; i++){
+        num=adject+num;
+        adject = num-adject;
+        alert(adject);
+        showNumber = showNumber +num+",";
+    }
+    document.write(showNumber+"...")
+</script>
+</body>
+</html>
