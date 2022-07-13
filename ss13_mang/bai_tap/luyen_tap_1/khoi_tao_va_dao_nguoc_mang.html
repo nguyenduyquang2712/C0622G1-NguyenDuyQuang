@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputArray = [];
+    let amount = +prompt("Nhập sô phần tử mảng cần khởi tạo: ")
+    for (let i = 0; i < amount ; i++) {
+        inputArray[i] = +prompt("Nhập phần tử tại vị trí "+i);
+    }
+    document.write("Mảng ban đầu là: ["+inputArray+"]"+"<br>"+"<br>");
+    document.write("Mảng đảo ngược là: ["+inputArray.reverse()+"]");
+</script>
+</body>
+</html>

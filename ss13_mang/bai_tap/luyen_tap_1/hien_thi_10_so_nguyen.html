@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrSoNguyen = [];
+    let result = [];
+    for (let i = 0; i <10 ; i++) {
+     arrSoNguyen.push(prompt("Nhập số nguyên vào mảng"));
+     if (arrSoNguyen[i]>=10){
+         result.push(arrSoNguyen[i]);
+     }
+    }
+    document.write("10 số nguyên trong mảng là: "+arrSoNguyen +"<br>"+"<br>");
+    document.write("Các phần tử trong mảng lớn hơn hoặc bằng 10 là: "+result);
+</script>
+</body>
+</html>

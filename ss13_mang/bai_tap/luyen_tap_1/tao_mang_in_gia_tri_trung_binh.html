@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let amount = +prompt("Nhập số lượng phần tử cần tạo: ");
+    newArray = [];
+    for (let i = 0; i < amount; i++) {
+        newArray[i] = +prompt("Nhập phần tử tại vị trí " + i);
+    }
+    let Max = newArray[0];
+    let Sum = 0;
+    for (let i = 0; i < amount; i++) {
+        if (newArray[i] > Max) {
+            Max = newArray[i];
+        }
+        Sum = Sum + newArray[i];
+    }
+    document.write("Mảng đã khởi tạo : [" + newArray + "]<br>" + "<br>");
+    document.write("Phẩn từ có giá trị lớn nhất của mảng là: " + Max + "<br>" + "<br>");
+    document.write("Giá trị trung bình các phẩn tử của mảng: " + (Sum / amount));
+
+</script>
+</body>
+</html>

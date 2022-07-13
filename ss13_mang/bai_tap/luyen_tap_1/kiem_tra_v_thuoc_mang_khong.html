@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputArray = [];
+    for (let i = 0; i < 10; i++) {
+        inputArray[i] = +prompt("Nhập phần tử số nguyên tại vị trí " + i);
+    }
+    document.write("Mảng khởi tạo là: [" + inputArray + "]" + "<br>" + "<br>");
+    let V = +prompt("Nhập phần tử số nguyên V");
+    if (inputArray.includes(V)) {
+        document.write("V= " + V + " is in the array");
+    } else document.write("V= " + V + " is not in the array");
+</script>
+</body>
+</html>
