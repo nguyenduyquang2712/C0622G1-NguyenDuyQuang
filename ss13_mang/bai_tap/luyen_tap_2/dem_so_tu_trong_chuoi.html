@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputString = prompt("Nhập chuỗi là một câu có nghĩa");
+    let inputArray = inputString.split(' ');
+    document.write("Chuỗi nhập vào là: "+inputString+"<br>");
+    let count = 0;
+    for (let i = 0; i < inputArray.length; i++) {
+        if (inputArray[i].length === 1){
+            count++;
+        }
+    }
+    document.write("Số từ trong chuỗi nhập vào là: "+(inputArray.length-count));
+
+</script>
+</body>
+</html>

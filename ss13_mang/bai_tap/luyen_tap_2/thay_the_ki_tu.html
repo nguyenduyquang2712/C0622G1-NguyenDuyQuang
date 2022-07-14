@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let amount = +prompt("Số lượng phần từ cần nhập")
+    let inputArray = [];
+    for (let i = 0; i < amount; i++) {
+        inputArray[i] = prompt("Nhập phần tử tại vị trí "+i);
+    }
+    document.write("Mảng khởi tạo là: ["+inputArray+"]"+"<br>"+"<br>")
+    for (let i = 0; i < amount ; i++) {
+        if(inputArray[i]=== "-") {
+            inputArray[i] = "_"
+        }
+    }
+    document.write("Mảng thay thế là: ["+inputArray+"]");
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let string1 = prompt("Nhập chuỗi 1");
+    let string2 = prompt("Nhập chuỗi 2");
+    let array1 = Array.from(string1);
+    let array2 = Array.from(string2);
+
+    document.write(" chuỗi 1 khởi tạo là: " + string1 + "<br>" + "<br>");
+    document.write(" chuỗi 1 khởi tạo là: " + string2 + "<br>" + "<br>");
+    let check = 0;
+    if (array1.length !== array2.length) {
+        document.write("2 chuỗi không giống nhau");
+    } else {
+        {
+            for (let i = 0; i < array1.length; i++) {
+                if (array1[i] === array2[i]) {
+                    check++
+                }
+            }
+        }
+        if (check === array1.length) {
+            document.write("2 chuỗi giống nhau")
+        } else document.write("2 chuỗi không giống nhau");
+    }
+</script>
+</body>
+</html>
