@@ -8,10 +8,11 @@
 <script>
     let inputString = prompt("Nhập chuỗi là một câu có nghĩa");
     let inputArray = inputString.split(' ');
+    alert (inputArray);
     document.write("Chuỗi nhập vào là: "+inputString+"<br>");
     let count = 0;
     for (let i = 0; i < inputArray.length; i++) {
-        if (inputArray[i].length === 1){
+        if (inputArray[i].length === 1 || inputArray[i]===""){
             count++;
         }
     }
