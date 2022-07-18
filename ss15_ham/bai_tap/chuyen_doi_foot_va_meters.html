@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="foot" style="width: 200px" placeholder="Nhập foot cần chuyển đổi">
+<input type="button" value="Convert" onclick="feetToMeter()"> <br>
+<p id="showMeter"></p> <br><br>
+<input type="number" id="meters" style="width: 200px" placeholder="Nhập meters cần chuyển đổi">
+<input type="button" value="Conver" onclick="metertoFoot()"> <br>
+<p id="showFoot"></p>
+</body>
+<script>
+    function feetToMeter() {
+        document.getElementById("showMeter").innerHTML = "Kết quả là: " + document.getElementById("foot").value * 3.279+" Meters";
+    }
+
+    function metertoFoot() {
+        document.getElementById("showFoot").innerHTML = "Kết quả là: " + document.getElementById("meters").value * 0.305+" Meters";
+    }
+</script>
+</html>

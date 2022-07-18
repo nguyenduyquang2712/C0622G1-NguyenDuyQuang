@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkNumber(number) {
+        if ((parseFloat(number)-parseInt(number)==0) && number>0){
+            return true
+        } else return false
+    }
+    let inputNumber = +prompt("nhập vào một số bất kỳ");
+    alert(checkNumber(inputNumber));
+</script>
+</body>
+</html>

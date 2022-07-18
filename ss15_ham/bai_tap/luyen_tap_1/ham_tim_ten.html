@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span>Nhập tên ngôi sao: </span><input type="text" id="stars">
+<p id="show"></p>
+</body>
+<script>
+    document.getElementById("stars").value = prompt("Nhập tên ngôi sao");
+
+    function searchStar(str) {
+        let arr1 = ["Plaris", "Albebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let arr2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        let check = true;
+        for (let i = 0; i < arr1.length; i++) {
+            if (str.toString() === arr1[i]) {
+                document.getElementById("show").innerHTML = "Chòm sao tương ứng: "+arr2[i];
+                check = false;
+                break;
+            }
+        }
+        if (check) {
+            document.getElementById("show").innerHTML = "Không tìm thấy kết quả";
+        }
+    }
+
+    searchStar(document.getElementById("stars").value);
+</script>
+</html>

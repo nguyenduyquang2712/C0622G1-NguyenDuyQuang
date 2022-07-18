@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findChart(chart, arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === chart) {
+                count++;
+            }
+        }
+        if (count) {
+            return count;
+        } else return -1;
+    }
+
+    let inputArr = [];
+    let amount = prompt("Nhập số lượng phần tử của mảng");
+    for (let i = 0; i < amount; i++) {
+        inputArr[i] = prompt("Nhập phần tử kí tự tại vị trí " + i);
+    }
+    document.write("mảng ban đầu: [" + inputArr + "]" + "<br>");
+    let inputChart = prompt("Nhập kí tự bất kỳ");
+    let result = findChart(inputChart, inputArr);
+    if (result !== -1) {
+        document.write("số lần xuất hiện của kí tự nhập vào để kiểm tra trong mảng là: " + result);
+    } else document.write("Kí tự nhập vào ko xuất hiện trong mảng ban đầu");
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function doReverse(arr) {
+        arr = arr.reverse()
+        return arr;
+    }
+    let inputArr=[];
+    let amount = +prompt("Nhập số lượng phần từ của mảng");
+    for (let i = 0; i < amount ; i++) {
+        inputArr[i] = +prompt("Nhập phần tử số nguyên tại vị trí" +i);
+    }
+    document.write("mảng ban đầu: ["+inputArr+"]"+"<br>");
+    let result = doReverse(inputArr);
+    document.write("Mảng sau khi đảo ngược là: ["+result+"]");
+</script>
+</body>
+</html>

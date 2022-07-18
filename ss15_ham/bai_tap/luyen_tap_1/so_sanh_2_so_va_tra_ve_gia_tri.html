@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function soSanh2So(firstNum, secondNum) {
+        if (firstNum < secondNum) {
+            return firstNum + secondNum;
+        } else {let show = "Số lớn hơn là: "+firstNum;
+                return show;}
+    }
+
+    let inputNum1 = +prompt("Nhập vào số thứ nhất");
+    let inputNum2 = +prompt("Nhập vào số thứ hai");
+    //  soSanh2So(inputNum1,inputNum2);
+    let result = soSanh2So(inputNum1, inputNum2);
+    alert(result)
+
+
+</script>
+</html>

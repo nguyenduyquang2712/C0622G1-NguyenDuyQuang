@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputNumber1 = +prompt("Nhập số thứ nhất");
+    let inputNumber2 = +prompt("Nhập số thứ hai");
+    document.write("số thứ nhât và thứ hai lần lượt là: " + inputNumber1 + ", " + inputNumber2 + "<br>" + "<br>");
+
+    function swap(number1, number2) {
+        inputNumber1 = number2;
+        inputNumber2 = number1;
+    }
+
+    swap(inputNumber1, inputNumber2);
+    document.write("Sau khi hoán đổi số thứ nhất và hai lần lượt là: " + inputNumber1 + ", " + inputNumber2 + "<br>" + "<br>");
+
+</script>
+</body>
+</html>

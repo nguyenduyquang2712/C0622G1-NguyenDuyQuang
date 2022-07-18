@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkNum(num1,num2,num3) {
+        if (num1<num2 && num1<num3){
+            return num1;
+        } else if (num2<num3){
+            return num2;
+        } else return num3;
+    }
+    let inputNumber1 = parseInt(prompt("Nhập số thứ nhất"));
+    let inputNumber2 = parseInt(prompt("Nhập số thứ hai"));
+    let inputNumber3 = parseInt(prompt("Nhập số thứ ba"));
+    let result = checkNum(inputNumber1,inputNumber2,inputNumber3);
+    document.write("Số nhỏ nhất trong 3 số là: "+result);
+</script>
+</body>
+</html>

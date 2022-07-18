@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function doFactorial(number) {
+        if (number === 2){
+            return 2 ;
+        } else
+            return number*doFactorial(number-1);
+    }
+    let inputNumber = +prompt("Nhập vào số nguyên muốn tình giai thừa: ");
+    let result = doFactorial(inputNumber);
+    document.write("kết quả tính giai thừa của "+inputNumber+" là: "+result);
+</script>
+</body>
+</html>
