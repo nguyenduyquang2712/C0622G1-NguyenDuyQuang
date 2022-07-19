@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    class Temperature {
+        constructor(celcius) {
+            this.celcius = celcius;
+        }
+            getCelcius() {
+                return this.celcius;
+            }
+            getFahrenheit() {
+                return this.celcius * (9 / 5) + 32;
+            }
+            getKelvin() {
+                return this.celcius + 273.15;
+            }
+    }
+
+    let temperature = new Temperature(25);
+    document.write("Độ C nhập vào là: " + temperature.getCelcius() + " (oC)" + "<br>")
+    document.write("Độ F chuyển đổi là: " + temperature.getFahrenheit() + " (oF)" + "<br>");
+    document.write("Độ Kevin chuyển đổi là: " + temperature.getKelvin() + " (oK)" + "<br>");
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+
+</canvas>
+</body>
+<script>
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        getWidth = function () {
+            return this.width;
+        }
+        getHeight = function () {
+            return this.height;
+        }
+        areaRec = function () {
+            return this.width * this.height;
+        }
+        perimeterRec = function () {
+            return (this.width + this.height) * 2;
+        }
+
+    }
+
+    let myRectangle = new Rectangle(100, 50);
+    let canvas = document.getElementById('myCanvas'),
+        ctx = canvas.getContext('2d');
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(0, 0, 100, 50);
+    alert("Chiều dài: " + myRectangle.getWidth() + " m");
+    alert("Chiều dài: " + myRectangle.getHeight() + " m");
+    document.write("<br>" + "Diện tích hcn là: " + myRectangle.areaRec() + " m" + "<br>");
+    document.write("Chu vi hcn là: " + myRectangle.perimeterRec() + " m");
+</script>
+</html>
