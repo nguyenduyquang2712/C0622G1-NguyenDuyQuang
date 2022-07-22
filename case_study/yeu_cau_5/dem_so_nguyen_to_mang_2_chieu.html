@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function isPrime(number) {
+            let dem = 0;
+        for (let i = 1; i <= number ; i++) {
+            if(number%i===0){dem++}
+        }
+        if(dem===2) {return true;}
+        else return false;
+    }
+    function countPrimeNumber(arr) {
+        let result = "";
+        let newArray =[];
+        for (let i = 0; i < arr.length ; i++) {
+            for (let j = 0; j < arr[i].length ; j++) {
+                if (isPrime(arr[i][j])){
+                    newArray.push(arr[i][j]);
+                }
+            }
+        }
+        result = "Các số nguyên tố mảng trong 2 chiều: "+newArray+"<br>"+"Số lượng là: "+newArray.length;
+        return result;
+    }
+
+    let inputArray = [[1,2,3,5],[3,3,5],[5,3,1]];
+    document.write(countPrimeNumber(inputArray));
+</script>
+</html>

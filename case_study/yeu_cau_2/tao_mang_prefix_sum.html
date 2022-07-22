@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function creatPrefix(arr) {
+        let arrtotal = [arr[0]];
+        for (let i = 1; i < arr.length ; i++) {
+            arrtotal.push(arr[i]+arrtotal[i-1]);
+        }
+        return arrtotal;
+    }
+    let inputArray= [1,2,3,4];
+    document.write(creatPrefix(inputArray));
+</script>
+</html>

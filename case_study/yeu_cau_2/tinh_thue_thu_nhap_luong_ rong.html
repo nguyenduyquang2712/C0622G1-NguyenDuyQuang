@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    function checkLuong(amount) {
+        let tax;
+        let luongTotal = 0;
+        if (amount>=15){
+            tax = amount*0.2;
+            luongTotal = amount-tax;
+        } else if (luongTotal>=7){
+            tax = amount*0.2;
+            luongTotal = amount-tax;
+        } else {tax = amount*0.05;
+        luongTotal = amount-tax;}
+        return "Thue thu nhap là "+tax+" (Triệu)"+"<br>"+"Luong thuc te là: "+luongTotal+" (Triệu)";
+    }
+    let inputLuong = +prompt("Nhập lương nhận đc (Triệu)");
+    checkLuong(inputLuong);
+    document.write( checkLuong(inputLuong));
+</script>
+</html>

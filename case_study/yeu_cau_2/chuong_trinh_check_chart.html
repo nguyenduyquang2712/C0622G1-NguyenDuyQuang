@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function checkChart(chart) {
+        let arr = ['o', 'u', 'i', 'a', 'e', 'O', 'U', 'I', 'A', 'E'];
+        let check = false;
+        for (let i = 0; i < 9; i++) {
+            if (chart === arr[i]) {
+               check = true; break;
+            }
+        }
+        if(check) {
+            alert ("Đây là nguyên âm");
+        } else alert("Đây là phụ âm");
+
+    }
+    let inputChart = prompt("Nhập kí tự cần kiểm tra: ");
+    checkChart(inputChart);
+</script>
+</html>

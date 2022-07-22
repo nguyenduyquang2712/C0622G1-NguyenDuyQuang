@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function creatTriangle(height) {
+        let string = "";
+        for (let i = 1; i <= height ; i++) {
+            string = string+" ";
+            for (let j = 0; j <= 2*height; j++) {
+                if(i==height){
+                string = string+"*";
+                }else
+                    if(i==1){
+                        if (j!=height){
+                            string=string+"&nbsp&nbsp";
+                        } else string=string+"*"
+                } else if (j==(height-i)|| j==height+i){
+                        string = string+"*";
+                    } else
+                        string=string+"&nbsp&nbsp";
+            }
+            string = string+"<br>"
+            }
+        return string;
+        }
+
+    document.write(creatTriangle(5));
+</script>
+</html>

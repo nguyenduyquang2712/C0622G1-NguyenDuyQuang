@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+function countChart(string) {
+    let arrayString = [];
+    let newArrayString=[];
+    for (let i = 0; i < string.length ; i++) {
+        arrayString.push(string[i]);
+    }
+    newArrayString.push(arrayString[0]);
+    for (let i = 1; i < arrayString.length ; i++) {
+        if(!newArrayString.includes(arrayString[i])){
+            newArrayString.push(arrayString[i]);
+        }
+    }
+    let total = "Chuỗi có các kí tự khác nhau là: "+newArrayString+"<br>"+" Số phần tử là: "+newArrayString.length;
+    return total;
+}
+let inputArray="cabcaddee";
+document.write(countChart(inputArray));
+</script>
+</html>

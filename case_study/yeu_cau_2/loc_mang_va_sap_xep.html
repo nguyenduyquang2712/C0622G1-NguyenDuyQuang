@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function creatArray(array1, array2) {
+        let newArray2 = [array2[0]];
+        for (let i = 1; i < array2.length ; i++) {
+            if(!newArray2.includes(array2[i])){
+            newArray2.push(array2[i]);
+            }
+        }
+        for (let i = 0; i < newArray2.length ; i++) {
+            for (let j = 0; j < array1.length ; j++) {
+                if(newArray2[i]===array1[j]){
+                    newArray2.splice(i,1)
+                }
+            }
+        }
+        newArray2.sort();
+        return newArray2;
+        }
+        let inputArray1 = [7,2,5,3,5,3];
+        let inputArray2 = [7,2,5,4,6,3,5,3,4,4,6];
+        alert(creatArray(inputArray1,inputArray2));
+</script>
+</html>
