@@ -17,12 +17,11 @@
                 if (arrString1[i]===arrString2[j]) {
                    newArray.push(arrString1[i]);
                    arrString2.splice(j,1);
-                   j--;
                    break;
                 }
             }
         }
-        return newArray.length;
+        return newArray;
     }
  let s1= "aabccd";
     let s2 = "adcaadd";
