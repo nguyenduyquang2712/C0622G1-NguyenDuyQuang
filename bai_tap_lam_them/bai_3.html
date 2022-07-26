@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function showFibonaci(maxNumber) {
+        let array = [0];
+        let adject = 1;
+        for (let num = 0, i = 1; ; i++) {
+            num = adject + num;
+            adject = num - adject;
+            array.push(num);
+            if (num > maxNumber){
+                return array;
+            }
+
+        }
+    }
+    function checkArray(arr) {
+        let max = arr[0];
+        let totalArray = [];
+        for (let i = 1; i  < arr.length ; i++) {
+            if (max< arr[i]){
+                max = arr[i];
+            }
+        }
+        let arrayCheck = showFibonaci(max);
+        for (let i = 0; i < arr.length ; i++) {
+            for (let j = 0; j < arrayCheck.length; j++) {
+                if (arr[i] === arrayCheck[j]) {
+                    totalArray.push(arr[i]);
+                    break;
+                }
+            }
+        }
+            totalArray = totalArray.sort(function (a,b) {
+                    return a-b;
+            })
+            return totalArray;
+        }
+
+    let inputArray = [1,5,6,13,9,12,8,0,5,1];
+    alert(checkArray(inputArray));
+</script>
+</html>

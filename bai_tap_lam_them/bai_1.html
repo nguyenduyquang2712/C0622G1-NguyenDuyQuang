@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 1: Nhập từ bàn phím mảng số nguyên gồm n phần tử (n<=50). Hiển thị ra màn hình danh sách các phần tử của mảng,
+Hiện thị giá trị = tổng các số ở vị trí chắn – tổng các số ở vị trí lẻ
+Ví dụ: [15,2,3,5,10,15,7]. Kết quả sau khi thực hiện là: (15+3+10+7)-(2+5+15) = ?
+-->
+</body>
+<script>
+    let amount = +prompt("Nhập số phần tử của mảng: ");
+    let array = [];
+
+    while (amount > 50) {
+        amount = +prompt("Nhập lại số phần tử của mảng");
+    }
+
+    for (let i = 0; i < amount; i++) {
+        array[i] = +prompt("Nhập phần tử vào mảng: ");
+    }
+    document.write("Mảng nhập vào là: " + array + "<br>")
+    let sumChan = 0;
+    let sumLe = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (i % 2 === 0) {
+            sumChan += array[i];
+        } else {
+            sumLe += array[i];
+        }
+    }
+    document.write("Giá trị cần tính là " + (sumChan - sumLe));
+
+</script>
+</html>
