@@ -17,7 +17,6 @@ public class ArrayDeletingElement {
         System.out.println(Arrays.toString(array));
         System.out.println("Nhập phần tử muốn xóa: ");
         int number = scanner.nextInt();
-        if (number == 0) {
             int countNumber = 0;
             for (int i = 0; i < array.length; i++) {
                 if (number == array[i]) {
@@ -39,23 +38,7 @@ public class ArrayDeletingElement {
                     break;
                 }
             }
-        } else {
-            for (int i = 0; i < array.length; i++) {
-                if (number == array[i]) {
-                    System.out.println("phần tử cần xóa tại vị trí " + i);
-                }
-            }
-            for (int i = 0; i < array.length; i++) {
-                if (number == array[i]) {
-                    for (int j = i; j < array.length - 1; j++) {
-                        array[j] = array[j + 1];
 
-                    }
-                    array[array.length - 1] = 0;
-                    i--;
-                }
-            }
-        }
         System.out.println("Mảng mới xóa phần tử là:");
         System.out.println(Arrays.toString(array));
 
