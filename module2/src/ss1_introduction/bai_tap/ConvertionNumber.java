@@ -2,7 +2,7 @@ package ss1_introduction.bai_tap;
 
 import java.util.Scanner;
 
-public class Bai_2 {
+public class ConvertionNumber {
     public static void main(String[] args) {
         String[] numbersUnits = {" ", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
         String[] numbersTens = {"Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};

@@ -11,7 +11,7 @@ public class MaxElementMatrixArray {
         System.out.println("Nhập số cột ma trận");
         int colArray = scanner.nextInt();
         double[][] MatrixArray = new double[rowArray][colArray];
-        System.out.println("Nhấp các phần tử ma trận");
+        System.out.println("Nhập các phần tử ma trận");
         for (int i = 0; i < rowArray; i++) {
             for (int j = 0; j < colArray; j++) {
                 MatrixArray[i][j] = scanner.nextDouble();

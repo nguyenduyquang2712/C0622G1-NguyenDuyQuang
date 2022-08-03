@@ -2,7 +2,7 @@ package ss1_introduction.bai_tap;
 
 import java.util.Scanner;
 
-public class Bai_3 {
+public class MoneyConvertor {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double vnd = 23000;
