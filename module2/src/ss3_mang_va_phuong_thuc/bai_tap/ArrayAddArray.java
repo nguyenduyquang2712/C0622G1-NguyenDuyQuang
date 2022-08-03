@@ -7,18 +7,18 @@ public class ArrayAddArray {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập số lượng phần tử mảng 1:");
-        int amount1 = scanner.nextInt();
+        int amount1 = Integer.parseInt(scanner.nextLine());
         int[] array1 = new int[amount1];
         System.out.println("Nhập phần tử mảng 1: ");
         for (int i = 0; i < array1.length; i++) {
-            array1[i] = scanner.nextInt();
+            array1[i] = Integer.parseInt(scanner.nextLine());
         }
         System.out.println("Nhập số lượng phần tử mảng 2: ");
-        int amount2 = scanner.nextInt();
+        int amount2 = Integer.parseInt(scanner.nextLine());
         int[] array2 = new int[amount2];
         System.out.println("Nhập phần tử mảng 2: ");
         for (int i = 0; i < array2.length; i++) {
-            array2[i] = scanner.nextInt();
+            array2[i] = Integer.parseInt(scanner.nextLine());
         }
         System.out.println("Các phần tử của 2 mảng 1,2 lần lượt là: ");
         System.out.println(Arrays.toString(array1));

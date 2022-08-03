@@ -11,12 +11,12 @@ public class ArrayDeletingElement {
         int[] array = new int[amount];
         System.out.println("Nhập các phẩn tử mảng: ");
         for (int i = 0; i < amount; i++) {
-            array[i] = scanner.nextInt();
+            array[i] = Integer.parseInt(scanner.nextLine());
         }
         System.out.println("Mảng khởi tạo là: ");
         System.out.println(Arrays.toString(array));
         System.out.println("Nhập phần tử muốn xóa: ");
-        int number = scanner.nextInt();
+        int number = Integer.parseInt(scanner.nextLine());
             int countNumber = 0;
             for (int i = 0; i < array.length; i++) {
                 if (number == array[i]) {

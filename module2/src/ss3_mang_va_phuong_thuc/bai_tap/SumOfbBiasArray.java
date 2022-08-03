@@ -7,7 +7,7 @@ public class SumOfbBiasArray {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Khởi tạo mảng ma trận vuông");
         System.out.println("Nhập số hàng và cột ");
-        int number = scanner.nextInt();
+        int number = Integer.parseInt(scanner.nextLine());
         double[][] MatrixArray = new double[number][number];
         System.out.println("Nhấp các phần tử ma trận");
         for (int i = 0; i < number; i++) {

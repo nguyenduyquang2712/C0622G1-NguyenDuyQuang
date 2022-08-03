@@ -7,14 +7,14 @@ public class SumOfCollumArray {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Khởi tạo mảng 2 chiều với kích thước cho trước");
         System.out.println("Nhập số hàng ");
-        int rowArray = scanner.nextInt();
+        int rowArray = Integer.parseInt(scanner.nextLine());
         System.out.println("Nhập số cột ");
-        int colArray = scanner.nextInt();
+        int colArray = Integer.parseInt(scanner.nextLine());
         double[][] MatrixArray = new double[rowArray][colArray];
         System.out.println("Nhấp các phần tử ma trận");
         for (int i = 0; i < rowArray; i++) {
             for (int j = 0; j < colArray; j++) {
-                MatrixArray[i][j] = scanner.nextDouble();
+                MatrixArray[i][j] = Double.parseDouble(scanner.nextLine());
             }
         }
 
@@ -27,7 +27,7 @@ public class SumOfCollumArray {
 
         }
         System.out.println("Nhập số cột muốn tính tổng:");
-        int colNumber = scanner.nextInt();
+        int colNumber = Integer.parseInt(scanner.nextLine());
         double sum = 0;
         for (int i = 0; i < rowArray ; i++) {
             sum+= MatrixArray[i][colNumber-1];

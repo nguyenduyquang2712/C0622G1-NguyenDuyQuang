@@ -7,14 +7,14 @@ public class MaxElementMatrixArray {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Khởi tạo ma trận số nguyên");
         System.out.println("Nhập số hàng ma trận");
-        int rowArray = scanner.nextInt();
+        int rowArray = Integer.parseInt(scanner.nextLine());
         System.out.println("Nhập số cột ma trận");
-        int colArray = scanner.nextInt();
+        int colArray = Integer.parseInt(scanner.nextLine());
         double[][] MatrixArray = new double[rowArray][colArray];
         System.out.println("Nhập các phần tử ma trận");
         for (int i = 0; i < rowArray; i++) {
             for (int j = 0; j < colArray; j++) {
-                MatrixArray[i][j] = scanner.nextDouble();
+                MatrixArray[i][j] = Double.parseDouble(scanner.nextLine());
             }
         }
 
