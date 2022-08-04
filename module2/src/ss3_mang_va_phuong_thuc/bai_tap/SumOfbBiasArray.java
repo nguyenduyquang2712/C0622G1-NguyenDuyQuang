@@ -26,11 +26,7 @@ public class SumOfbBiasArray {
         }
         double sumOfbBiasArray=0;
         for (int i = 0; i < MatrixArray.length ; i++) {
-            for (int j = 0; j < MatrixArray.length ; j++) {
-                if(i==j){
-                    sumOfbBiasArray+= MatrixArray[i][j];
-                }
-            }
+            sumOfbBiasArray+= MatrixArray[i][i];
         }
         System.out.printf("Tổng các số ở đường chéo chính của ma trận là: %.2f",sumOfbBiasArray);
     }
