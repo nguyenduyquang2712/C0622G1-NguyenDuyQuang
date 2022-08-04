@@ -8,11 +8,10 @@ public class ChartShow {
         System.out.println("Nhập chuỗi  ");
         String stringCheck = scanner.nextLine();
         System.out.println("Nhập 1 kí tự cần check");
-        String charCheck = scanner.nextLine();
-        char newCharCheck = charCheck.charAt(0);
+        char charCheck = scanner.nextLine().charAt(0);
         int count = 0;
         for (int i = 0; i <stringCheck.length() ; i++) {
-            if(stringCheck.charAt(i)==newCharCheck){
+            if(stringCheck.charAt(i)==charCheck){
                 count++;
             }
         }
