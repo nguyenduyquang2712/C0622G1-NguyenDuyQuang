@@ -12,8 +12,8 @@ public class Main {
         fan2.setRadius(5);
         fan2.setON(false);
         fan2.setColor("blue");
-        System.out.println(fan1.toString());
-        System.out.println(fan2.toString());
+        System.out.println("Fan1 "+fan1.toString());
+        System.out.println("Fan2 "+fan2.toString());
 
     }
 }

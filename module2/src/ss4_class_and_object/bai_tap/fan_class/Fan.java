@@ -47,7 +47,7 @@ public class Fan {
 
     @Override
     public String toString() {
-        if (this.isON) {
+        if (this.getIsON()) {
             return "Fan{" +
                     " speed=" + this.getSpeed() +
                     ", radius=" + this.getRadius() +
