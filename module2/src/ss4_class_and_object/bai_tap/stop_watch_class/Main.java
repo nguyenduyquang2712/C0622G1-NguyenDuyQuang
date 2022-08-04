@@ -8,18 +8,16 @@ public class Main {
         System.out.println("Đang đếm thời gian");
         int[] array = new int[100000];   // khởi tạo random 100000 số
         for (int i = 0; i < array.length; i++) {
-            array[i] = (int)Math.floor(Math.random()*100000);
+            array[i] = (int) Math.floor(Math.random() * 100000);
         }
-        while (true) {
-            sort(array); // dùng hàm Sắp xếp định nghĩa
-            for (int i = 0; i < array.length ; i++) {
-                System.out.print(array[i] +" ");
-            }
-            System.out.println();
-            stopWatch.stop();
-            stopWatch.getElapsedTime();
-            break;
+        sort(array); // dùng hàm Sắp xếp định nghĩa
+        for (int i = 0; i < array.length; i++) {
+         System.out.print(array[i] + " ");
         }
+        System.out.println();
+        stopWatch.stop();
+        stopWatch.getElapsedTime();
+
 
     }
 

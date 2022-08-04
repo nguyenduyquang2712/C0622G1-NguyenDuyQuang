@@ -1,8 +1,9 @@
 package ss4_class_and_object.bai_tap.quadraticequation_class;
 
 public class QuadraticEquation {
-    private double constantA, constantB, constantC;
-
+    private double constantA;
+    private double constantB;
+    private double constantC;
     public QuadraticEquation() {
         this.constantA = 0;
         this.constantB = 0;
