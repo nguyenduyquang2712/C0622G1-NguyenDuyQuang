@@ -3,10 +3,14 @@ package ss4_class_and_object.thuc_hanh.Example;
 import java.util.Scanner;
 
 public class SelectionSort {
-   public static String getVersion(){
-       return "1.1";
-   }
-    }
+    static int a = 40;
+
+    /*non static*/
+//    public static void main(String args[]) {
+//        System.out.println(a);
+//    }
+}
+
 
 
 
