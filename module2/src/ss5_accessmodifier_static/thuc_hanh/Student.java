@@ -1,23 +1,22 @@
 package ss5_accessmodifier_static.thuc_hanh;
 
 public class Student {
-    private int rollno;
-    private String name;
-    private static String college = "BBDIT";
-
-    //constructor to initialize the variable
-     Student(int r, String n) {
-        this.rollno = r;
-        this.name = n;
-    }
-
-    //static method to change the value of static variable
-     static void change() {
-        college = "CODEGYM";
-    }
-
-    //method to display values
-    void display() {
-        System.out.println(rollno + " " + name + " " + college);
+    public static void main(String[] args) {
+        A a = new A();
+        a.p(10);
+        a.p(10.0);
     }
 }
+
+class A extends B {
+    public void p(int number) {
+        System.out.println(number);
+    }
+}
+
+class B {
+    public void p(double number) {
+        System.out.println(number * 2);
+    }
+    }
+
