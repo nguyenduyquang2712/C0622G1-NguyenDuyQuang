@@ -18,7 +18,6 @@ public class ColorableTest {
             if (shape instanceof Square) {
                 ((Square) shape).howToColor();
                 System.out.println();
-
             }
             System.out.println();
         }

@@ -1,9 +1,8 @@
 package ss7_abstract_and_interface.thuc_hanh.interface_comparable_shape.model;
 
-import ss6_inheritance.thuc_hanh.shape.Shape;
 
 public class Circle extends Shape {
-    private double radius = 1.0;
+    public double radius = 1.0;
 
     public Circle() {
     }
@@ -18,7 +17,7 @@ public class Circle extends Shape {
     }
 
     public double getRadius() {
-        return radius;
+        return this.radius;
     }
 
     public void setRadius(double radius) {
@@ -37,8 +36,8 @@ public class Circle extends Shape {
     public String toString() {
         return "A Circle with radius="
                 + getRadius()
-                + ", which is a subclass of "
-                + super.toString();
+                + ", which is a subclass of ";
+//                + super.toString();
     }
 
 

@@ -13,10 +13,10 @@ public class Square extends Shape implements Colorable {
         this.side = side;
     }
 
-//    public Square(double side, String color, boolean filled) {
-//        super(color, filled);
-//        this.side = side;
-//    }
+    public Square(double side, String color, boolean filled) {
+        super(color, filled);
+        this.side = side;
+    }
 
     public double getSide() {
         return side;
@@ -29,7 +29,7 @@ public class Square extends Shape implements Colorable {
         return side * side;
     }
 
-//    @Override
+    @Override
     public String toString() {
         return "A Square with side="
                 + getSide()

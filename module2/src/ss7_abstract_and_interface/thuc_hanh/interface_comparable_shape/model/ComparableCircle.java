@@ -1,7 +1,6 @@
 package ss7_abstract_and_interface.thuc_hanh.interface_comparable_shape.model;
 
 public class ComparableCircle extends Circle implements Comparable<ComparableCircle> {
-
     public ComparableCircle() {
     }
 
@@ -14,9 +13,17 @@ public class ComparableCircle extends Circle implements Comparable<ComparableCir
     }
 
     @Override
+    public String toString() {
+        return "ComparableCircle{" +
+                "radius=" + radius +
+                super.toString()+
+                '}';
+    }
+
+    @Override
     public int compareTo(ComparableCircle o) {
-        if (super.getRadius() > o.getRadius()) return 1;
-        else if (super.getRadius() < o.getRadius()) return -1;
+        if (getRadius() > o.getRadius()) return 1;
+        else if (getRadius() < o.getRadius()) return -1;
         else return 1;
     }
 }
