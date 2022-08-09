@@ -13,7 +13,7 @@ public class ResizeableTest {
         shapes[1] = new Rectangle(5, 10);
         shapes[2] = new Square(10);
         for (Shape shape : shapes) {
-            shape.resize(50);
+            shape.resize(Math.floor(Math.random()*100));
         }
         for (Shape shape : shapes) {
             System.out.println(shape);
