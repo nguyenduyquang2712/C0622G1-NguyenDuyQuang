@@ -28,6 +28,7 @@ public class ComparableCircleTest {
         Circle circle2 = new ComparableCircle(3);
         Circle circle = new ComparableCircle(3);
         System.out.println(((ComparableCircle) circle).compareTo((ComparableCircle) circle2));
-
+        Circle circle1 = new Circle();
+        circle1 =  circle;
     }
 }
