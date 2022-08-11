@@ -48,13 +48,15 @@ public class Mylist<E> {
     }
     public void add(int index, E e) {
         ensureCapacity();
-        for (int i = size - 1; i >= index; i--) elements[i + 1] = elements[i];
+        for (int i = size - 1; i >= index; i--) {
+            elements[i + 1] = elements[i];}
         elements[index] = e;
         size++;
     }
     public int indexOf(E e) {
         for (int i = 0; i < size; i++)
-            if (e.equals(elements[i])) return i;
+            if (e.equals(elements[i])) {
+                return i;}
         return -1;
     }
 
@@ -63,8 +65,8 @@ public class Mylist<E> {
             throw new IndexOutOfBoundsException ("index " + index + " out of bounds");}
         E e = (E) elements[index];
 
-        for (int j = index; j < size - 1; j++)
-            elements[j] = elements[j + 1];
+        for (int j = index; j < size - 1; j++){
+            elements[j] = elements[j + 1];}
         elements[size - 1] = null;
         size--;
         return e;
