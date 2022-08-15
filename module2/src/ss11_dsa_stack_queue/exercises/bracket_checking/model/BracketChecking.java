@@ -18,9 +18,8 @@ public class BracketChecking {
             if (str.charAt(i) == ')') {
                 if (characterStack.isEmpty()) {
                     return false;
-                } else if (characterStack.pop() != '(') {
-                    return false;
-                }
+                } else characterStack.pop();
+
             }
         }
         return characterStack.isEmpty();
