@@ -48,8 +48,22 @@ public class StudentService implements IStudentService {
         }
     }
 
+    @Override
+    public void changeInfoStudent() {
+        Student student = this.findStudent();
+        if(student == null){
+            System.out.println("không tìm thấy đối tượng ");
+        }else{
+            for (int i = 0; i < students.size() ; i++) {
+                if(students.get(i).getId() == student.getId()){
+                    students.set(i,this.infoStudent());
+                }
+            }
+        }
+    }
+
     private Student findStudent() {
-        System.out.print("Mời bạn nhập vào id cần xóa: ");
+        System.out.print("Mời bạn nhập vào id cần xóa hoặc chỉnh sửa: ");
         int id = Integer.parseInt(scanner.nextLine());
 //        for (int i = 0; i < students.size(); i++) {
 //            if (students.get(i).getId() == id) {

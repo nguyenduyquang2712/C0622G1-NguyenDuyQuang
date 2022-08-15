@@ -16,8 +16,9 @@ public class StudentController {
             System.out.println("1. Hiển thị danh sách học viên");
             System.out.println("2. Thêm mới học sinh");
             System.out.println("3. Xóa học sinh");
-            System.out.println("4. Quay lại trang chinh");
-            System.out.print("Mời bạn nhập chức năng 1->4: ");
+            System.out.println("4. Sửa thông tin học viên");
+            System.out.println("5. Quay lại trang chính");
+            System.out.print("Mời bạn nhập chức năng 1->5: ");
             int choice1 = Integer.parseInt(scanner.nextLine());
             switch (choice1) {
                 case 1:
@@ -30,6 +31,9 @@ public class StudentController {
                     studentService.removeStudent();
                     break;
                 case 4:
+                    studentService.changeInfoStudent();
+                    break;
+                case 5:
                     return;
                 default:
                     System.out.println("Lựa chọn bạn nhập không đúng!");
