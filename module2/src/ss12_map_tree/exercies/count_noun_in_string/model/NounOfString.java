@@ -1,11 +1,11 @@
 package ss12_map_tree.exercies.count_noun_in_string.model;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
 
 public class NounOfString {
-    private static Map<String, Integer> map = new TreeMap<>();
+    private static Map<String, Integer> map = new LinkedHashMap<>();
 
     public static String formString(String str) {
         String newString = str.trim();

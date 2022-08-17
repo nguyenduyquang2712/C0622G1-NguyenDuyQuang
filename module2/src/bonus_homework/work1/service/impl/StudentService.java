@@ -1,9 +1,11 @@
 package bonus_homework.work1.service.impl;
 
+import bonus_homework.work1.model.Person;
 import bonus_homework.work1.model.Student;
 import bonus_homework.work1.service.IStudentService;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -51,16 +53,69 @@ public class StudentService implements IStudentService {
     @Override
     public void changeInfoStudent() {
         Student student = this.findStudent();
-        if(student == null){
+        if (student == null) {
             System.out.println("không tìm thấy đối tượng ");
-        }else{
-            for (int i = 0; i < students.size() ; i++) {
-                if(students.get(i).getId() == student.getId()){
-                    students.set(i,this.infoStudent());
+        } else {
+            for (int i = 0; i < students.size(); i++) {
+                if (students.get(i).getId() == student.getId()) {
+                    students.set(i, this.infoStudent());
                 }
             }
         }
     }
+
+    @Override
+    public void findInforStudent() {
+
+        while (true) {
+            System.out.println("1. Tìm kiếm sinh viên theo ID");
+            System.out.println("2. Tìm kiếm sinh viên theo tên");
+            System.out.println("3. Exit");
+            System.out.println("Mời bạn nhập tùy chọn 1->3");
+            int choice = Integer.parseInt(scanner.nextLine());
+            switch (choice) {
+                case 1:
+                    findInforStudentById();
+                    break;
+                case 2:
+                    findInforStudentByName();
+                    break;
+                case 3:
+                    return;
+                default:
+                    System.out.println("Nhập lại lựa chọn");
+                    break;
+            }
+        }
+    }
+
+    private void findInforStudentById() {
+        System.out.println("Nhập ID cần tìm kiếm: ");
+        int id = Integer.parseInt(scanner.nextLine());
+        for (Student student : students) {
+            if (student.getId() == id) {
+                System.out.println(student);
+                return;
+            }
+        }
+        System.out.println(" Không tìm thấy id");
+    }
+
+    private void findInforStudentByName() {
+        System.out.println("Nhập name student cần tìm kiếm");
+        String nameStudent = scanner.nextLine();
+        boolean check = false;
+        for(Student student:students){
+           if (student.getName().contains(nameStudent)){
+               System.out.println(student);
+               check = true;
+           }
+        }
+        if(!check) {
+            System.out.println("Ko tìm thấy tên cần tìm");
+        }
+    }
+
 
     private Student findStudent() {
         System.out.print("Mời bạn nhập vào id cần xóa hoặc chỉnh sửa: ");

@@ -1,5 +1,6 @@
 package bonus_homework.work1.service.impl;
 
+import bonus_homework.work1.model.Student;
 import bonus_homework.work1.model.Teacher;
 import bonus_homework.work1.service.ITeacherService;
 
@@ -48,6 +49,59 @@ public class TeacherService implements ITeacherService {
         }
 
     }
+
+    @Override
+    public void searchTeacher() {
+        while (true) {
+            System.out.println("1. Tìm kiếm giảng viên theo ID");
+            System.out.println("2. Tìm kiếm giảng viên theo tên");
+            System.out.println("3. Exit");
+            System.out.println("Mời bạn nhập tùy chọn 1->3");
+            int choice = Integer.parseInt(scanner.nextLine());
+            switch (choice) {
+                case 1:
+                    findInforTeacherById();
+                    break;
+                case 2:
+                    findInforTeacherByName();
+                    break;
+                case 3:
+                    return;
+                default:
+                    System.out.println("Nhập lại lựa chọn");
+                    break;
+            }
+        }
+    }
+
+    private void findInforTeacherByName() {
+        System.out.println("Nhập ID giảng viên cần tìm kiếm: ");
+        int id = Integer.parseInt(scanner.nextLine());
+        for (Teacher teacher : teachers) {
+            if (teacher.getId() == id) {
+                System.out.println(teacher);
+                return;
+            }
+        }
+        System.out.println(" Không tìm thấy id");
+    }
+
+    private void findInforTeacherById() {
+        System.out.println("Nhập name giảng viên cần tìm kiếm");
+        String nameStudent = scanner.nextLine();
+        boolean check = false;
+        for(Teacher teacher:teachers){
+            if (teacher.getName().contains(nameStudent)){
+                System.out.println(teacher);
+                check = true;
+            }
+        }
+        if(!check) {
+            System.out.println("Ko tìm thấy tên cần tìm");
+        }
+    }
+
+
 
     private Teacher findTeacher() {
         System.out.print("Mời bạn nhập vào id cần xóa: ");
