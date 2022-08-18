@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class MaxContinuousString {
     public static void main(String[] args) {
-        String str = "abcabcdgabmnxyablmntxyz";
+        String str = "rstabcabcref";
         ArrayList<String> list = new ArrayList<>();
         String subString = "" + str.charAt(0);
         for (int i = 1; i < str.length() - 1; i++) {

@@ -13,7 +13,7 @@ public class TeacherController {
         while (true) {
             System.out.println("---------------------------------------------");
             System.out.println("Chào mừng bạn đến với CODEGYM");
-            System.out.println("1. Hiển thị danh sách giảng viên");
+            System.out.println("1. Hiển thị danh sách giảng viên (theo alpha b");
             System.out.println("2. Thêm mới giảng viên");
             System.out.println("3. Xóa giảng viên");
             System.out.println("4. Tìm kiếm thông tin Giảng viên");

@@ -1,5 +1,4 @@
 package bonus_homework.work1.service.impl;
-
 import bonus_homework.work1.model.Student;
 import bonus_homework.work1.model.Teacher;
 import bonus_homework.work1.service.ITeacherService;
@@ -24,7 +23,20 @@ public class TeacherService implements ITeacherService {
             System.out.println(teacher);
         }
     }
-
+    private void sortTeacher(){
+        boolean isSwap = true;
+        for (int i = 0; i <teachers.size()-1 && isSwap ; i++) {
+            isSwap = false;
+            for (int j = 0; j <teachers.size()-1-i ; j++) {
+                if(teachers.get(j).getName().compareTo(teachers.get(j+1).getName())>0){
+                    isSwap = true;
+                    Teacher newTeacher = teachers.get(j+1);
+                    teachers.set(j+1,teachers.get(j));
+                    teachers.set(j,newTeacher);
+                }
+            }
+        }
+    }
     @Override
     public void addTeacher() {
         Teacher teacher = this.infoTeacher();

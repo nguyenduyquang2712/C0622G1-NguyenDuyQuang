@@ -1,32 +1,24 @@
 package ss13_searching_algorithm.practices.practices1;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Exam {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String str;
-        String strAscenMaxLength;
-
-        System.out.print("Nhập vào một chuỗi:");
-        str = sc.nextLine();
-        strAscenMaxLength = stringAscending(str);
-        System.out.printf("Chuỗi con lớn nhất trong %s : %s", str, strAscenMaxLength );
+        int[] arr = new int[]{1,5,4,4,7,4,6,8,2};
+        insertionSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
-
-    private static String stringAscending(String str) {
-        String result = "";
-        String strSub = "";
-        for(int i = 0; i < str.length() -1; i++) {
-            strSub += str.charAt(i);
-            for(int j = i +1; j < str.length(); j++) {
-                if(str.charAt(j) > str.charAt(i)) {
-                    strSub += str.charAt(j);
-                    i = j;
-                }
+    public static void insertionSort(int[] array){
+        int pos, x;
+        for(int i = 1; i < array.length; i++){ //đoạn array[0] đã sắp xếp
+            x = array[i];
+            pos = i;
+            while(pos > 0 && x < array[pos-1]){
+                array[pos] = array[pos-1]; // đổi chỗ
+                pos--;
             }
-            result = strSub.length() > result.length() ? strSub : result;
+            array[pos] = x;
         }
-        return result;
     }
+
 }

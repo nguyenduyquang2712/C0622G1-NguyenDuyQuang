@@ -1,11 +1,9 @@
 package bonus_homework.work1.service.impl;
 
-import bonus_homework.work1.model.Person;
 import bonus_homework.work1.model.Student;
 import bonus_homework.work1.service.IStudentService;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,8 +12,10 @@ public class StudentService implements IStudentService {
     private static List<Student> students = new ArrayList<>();
 
     static {
-        students.add(new Student(1, "quang", "12/12/12", "nam", "c0622g1", 1));
-        students.add(new Student(2, "hai", "12/12/12", "nam", "c0622g1", 7));
+        students.add(new Student(1, "Nguyen van quang", "12/12/12", "nam", "c0622g1", 1));
+        students.add(new Student(2, "Nguyen van hai", "12/12/12", "nam", "c0622g1", 7));
+        students.add(new Student(4, "Le dinh anh", "12/2/12", "nu", "c0622g1", 6));
+        students.add(new Student(5, "Nguyen binh", "11/11/11", "nam", "c0922g1", 5));
     }
 
     @Override
@@ -27,11 +27,29 @@ public class StudentService implements IStudentService {
 
     @Override
     public void showAllStudent() {
+        sortStudent();
         for (Student student : students
         ) {
             System.out.println(student);
         }
     }
+
+    private void sortStudent() {
+        boolean isSwap = true;
+        Student newStudent;
+        for (int i = 0; i < students.size() - 1 && isSwap; i++) {
+            isSwap = false;
+            for (int j = 0; j < students.size() - 1 - i; j++) {
+                if (students.get(j).getName().compareTo(students.get(j + 1).getName()) > 0) {
+                    isSwap = true;
+                    newStudent = students.get(j + 1);
+                    students.set(j + 1, students.get(j));
+                    students.set(j, newStudent);
+                }
+            }
+        }
+    }
+
 
     @Override
     public void removeStudent() {
@@ -105,13 +123,13 @@ public class StudentService implements IStudentService {
         System.out.println("Nhập name student cần tìm kiếm");
         String nameStudent = scanner.nextLine();
         boolean check = false;
-        for(Student student:students){
-           if (student.getName().contains(nameStudent)){
-               System.out.println(student);
-               check = true;
-           }
+        for (Student student : students) {
+            if (student.getName().contains(nameStudent)) {
+                System.out.println(student);
+                check = true;
+            }
         }
-        if(!check) {
+        if (!check) {
             System.out.println("Ko tìm thấy tên cần tìm");
         }
     }

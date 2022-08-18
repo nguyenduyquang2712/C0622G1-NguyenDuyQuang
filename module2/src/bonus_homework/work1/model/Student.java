@@ -13,10 +13,10 @@ public class Student extends Person {
     public String toString() {
         return "Student{" +
                 " ID = " + getId() +
-                " Name =" + getName() +
-                " Date of Birth = " + getDateOfBirth() +
+                " ,Name =" + getName() +
+                " ,Date of Birth = " + getDateOfBirth() +
                 " Sex = " + getSex() +
-                " score = " + score +
+                " ,score = " + score +
                 " ,nameClass = '" + nameClass +
                 "} ";
     }

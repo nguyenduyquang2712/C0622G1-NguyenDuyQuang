@@ -28,10 +28,10 @@ public class Teacher extends Person {
     public String toString() {
         return "Teacher{" +
                 " ID = " + getId() +
-                " Name = " + getName() +
-                " Date of Birth = " + getDateOfBirth() +
-                " Sex = " + getSex() +
-                " qualification = " + qualification +
+                " ,Name = " + getName() +
+                " ,Date of Birth = " + getDateOfBirth() +
+                " ,Sex = " + getSex() +
+                " ,qualification = " + qualification +
                 '}';
     }
 }
