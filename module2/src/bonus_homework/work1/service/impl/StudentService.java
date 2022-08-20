@@ -2,10 +2,10 @@ package bonus_homework.work1.service.impl;
 
 import bonus_homework.work1.model.Student;
 import bonus_homework.work1.service.IStudentService;
+import bonus_homework.work1.utils.*;
+import javafx.scene.chart.ScatterChart;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class StudentService implements IStudentService {
     private static Scanner scanner = new Scanner(System.in);
@@ -152,31 +152,113 @@ public class StudentService implements IStudentService {
     }
 
     private Student infoStudent() {
-        System.out.print("Mời bạn nhập id: ");
-        int id = Integer.parseInt(scanner.nextLine());
+
+        int id;
         while (true) {
-            boolean check = true;
-            for (Student student : students) {
-                if (student.getId() == id) {
-                    System.out.println("ID bị trùng, mời bạn nhập lại id");
-                    id = Integer.parseInt(scanner.nextLine());
-                    check = false;
-                    break;
+            try {
+                System.out.print("Mời bạn nhập id: ");
+                id = Integer.parseInt(scanner.nextLine());
+                boolean check = true;
+                for (Student student : students) {
+                    if (student.getId() == id) {
+                        System.out.println("ID bị trùng, mời bạn nhập lại id");
+                        id = Integer.parseInt(scanner.nextLine());
+                        check = false;
+                        break;
+                    }
                 }
+                if (check) break;
+            } catch (NumberFormatException e) {
+                System.out.println("Mời bạn nhập lại id");
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
             }
-            if (check) break;
         }
-        System.out.print("Mời bạn nhập tên: ");
-        String name = scanner.nextLine();
-        System.out.print("Mời bạn nhập ngày sinh: ");
-        String dateOfBirth = scanner.nextLine();
-        System.out.print("Mời bạn nhập giới tính: ");
-        String sex = scanner.nextLine();
-        System.out.print("Mời bạn nhập điểm: ");
-        double point = Double.parseDouble(scanner.nextLine());
-        System.out.print("Mời bạn nhập tên lớp: ");
-        String nameClass = scanner.nextLine();
-        Student student = new Student(id, name, dateOfBirth, sex, nameClass, point);
+
+        String name;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập tên: ");
+                name = (scanner.nextLine());
+                String str;
+                for (int i = 0; i < name.length(); i++) {
+                    str = "";
+                    if ((str + name.charAt(i)).matches("\\d+")) {
+                        throw new NameException("Tên bạn nhập ko hợp lệ");
+                    }
+                }
+
+                break;
+            } catch (NameException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        String dateOfBirth;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập ngày sinh: ");
+                dateOfBirth = scanner.nextLine();
+                if (!dateOfBirth.matches("\\d+\\d+\\W+\\d+\\d+\\W+\\d+\\d+\\d+\\d")) {
+                    throw new DateOfBirthException("Dữ liệu không đúng định dạng");
+                }
+                if (Integer.parseInt(dateOfBirth.substring(6)) > 2016) {
+                    throw new DateOfBirthException("Dữ liệu không đúng định dạng");
+                }
+                break;
+            } catch (DateOfBirthException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        String gender;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập giới tính: ");
+                gender = scanner.nextLine();
+                if (!gender.equals("nam") && (!gender.equals("nu"))) {
+                    throw new GenderException("Dữ liệu bạn nhập không hợp lệ");
+                }
+                break;
+            } catch (GenderException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        double point;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập điểm: ");
+                point = Double.parseDouble(scanner.nextLine());
+                if (point < 0 || point > 100) {
+                    throw new PointException("Điểm bạn nhập không hợp lệ");
+                }
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Dữ liệu nhập không đúng định dạng");
+            } catch (PointException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        String nameClass;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập tên lớp: ");
+                nameClass = scanner.nextLine();
+                if (!nameClass.matches("\\D+\\d+\\d+\\d+\\d+\\D+\\d")) {
+                    throw new NameClassException("Tên lớp không hợp lệ");
+                }
+                break;
+            } catch (NameClassException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        Student student = new Student(id, name, dateOfBirth, gender, nameClass, point);
         return student;
     }
 }
