@@ -18,26 +18,31 @@ public class TeacherController {
             System.out.println("3. Xóa giảng viên");
             System.out.println("4. Tìm kiếm thông tin Giảng viên");
             System.out.println("5. Quay lại trang chính");
-            System.out.print("Mời bạn nhập chức năng 1->5: ");
-            int choice2 = Integer.parseInt(scanner.nextLine());
-            switch (choice2) {
-                case 1:
-                    teacherService.showAllTeacher();
-                    break;
-                case 2:
-                    teacherService.addTeacher();
-                    break;
-                case 3:
-                    teacherService.removeTeacher();
-                    break;
-                case 4:
-                    teacherService.searchTeacher();
-                case 5:
-                    return;
-                default:
-                    System.out.println("Lựa chọn bạn nhập không đúng!");
+            try {
+                System.out.print("Mời bạn nhập chức năng 1->5: ");
+                int choice2 = Integer.parseInt(scanner.nextLine());
+                switch (choice2) {
+                    case 1:
+                        teacherService.showAllTeacher();
+                        break;
+                    case 2:
+                        teacherService.addTeacher();
+                        break;
+                    case 3:
+                        teacherService.removeTeacher();
+                        break;
+                    case 4:
+                        teacherService.searchTeacher();
+                    case 5:
+                        return;
+                    default:
+                        System.out.println("Lựa chọn bạn nhập không đúng!");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Không đúng định dạng số, mời nhập lại số");
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
             }
-
         }
     }
 }
