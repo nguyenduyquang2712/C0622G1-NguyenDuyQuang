@@ -1,10 +1,12 @@
 package bonus_homework.work1.service;
 
+import java.io.IOException;
+
 public interface IStudentService  {
 
-    void addStudent();
-    void showAllStudent();
-    void removeStudent();
-    void changeInfoStudent();
-    void findInforStudent();
+    void addStudent() throws IOException;
+    void showAllStudent() throws IOException;
+    void removeStudent() throws IOException;
+    void changeInfoStudent() throws IOException;
+    void findInforStudent() throws IOException;
 }

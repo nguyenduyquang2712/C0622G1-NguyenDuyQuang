@@ -3,8 +3,8 @@ package bonus_homework.work1.service.impl;
 import bonus_homework.work1.model.Student;
 import bonus_homework.work1.service.IStudentService;
 import bonus_homework.work1.utils.*;
-import javafx.scene.chart.ScatterChart;
 
+import java.io.IOException;
 import java.util.*;
 
 public class StudentService implements IStudentService {
@@ -19,14 +19,15 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public void addStudent() {
+    public void addStudent() throws IOException {
         Student student = this.infoStudent();
         students.add(student);
         System.out.println("Thêm mới học sinh thành công");
+        writeStudentFile("src\\bonus_homework\\work1\\data\\student.txt", students);
     }
 
     @Override
-    public void showAllStudent() {
+    public void showAllStudent() throws IOException {
         sortStudent();
         for (Student student : students
         ) {
@@ -34,7 +35,8 @@ public class StudentService implements IStudentService {
         }
     }
 
-    private void sortStudent() {
+    private void sortStudent() throws IOException {
+        students = readStudentFile("src\\bonus_homework\\work1\\data\\student.txt");
         boolean isSwap = true;
         Student newStudent;
         for (int i = 0; i < students.size() - 1 && isSwap; i++) {
@@ -48,11 +50,13 @@ public class StudentService implements IStudentService {
                 }
             }
         }
+        writeStudentFile("src\\bonus_homework\\work1\\data\\student.txt", students);
     }
 
 
     @Override
-    public void removeStudent() {
+    public void removeStudent() throws IOException {
+
         Student student = this.findStudent();
         if (student == null) {
             System.out.println("Không tìm thấy đối tượng cần xóa");
@@ -66,10 +70,11 @@ public class StudentService implements IStudentService {
                 System.out.println("Xóa thành công");
             }
         }
+        writeStudentFile("src\\bonus_homework\\work1\\data\\student.txt", students);
     }
 
     @Override
-    public void changeInfoStudent() {
+    public void changeInfoStudent() throws IOException {
         Student student = this.findStudent();
         if (student == null) {
             System.out.println("không tìm thấy đối tượng ");
@@ -80,11 +85,12 @@ public class StudentService implements IStudentService {
                 }
             }
         }
+        writeStudentFile("src\\bonus_homework\\work1\\data\\student.txt",students);
     }
 
     @Override
-    public void findInforStudent() {
-
+    public void findInforStudent() throws IOException {
+        students = readStudentFile("src\\bonus_homework\\work1\\data\\student.txt");
         while (true) {
             System.out.println("1. Tìm kiếm sinh viên theo ID");
             System.out.println("2. Tìm kiếm sinh viên theo tên");
@@ -107,7 +113,8 @@ public class StudentService implements IStudentService {
         }
     }
 
-    private void findInforStudentById() {
+    private void findInforStudentById() throws IOException {
+        students = readStudentFile("src\\bonus_homework\\work1\\data\\student.txt");
         System.out.println("Nhập ID cần tìm kiếm: ");
         int id = Integer.parseInt(scanner.nextLine());
         for (Student student : students) {
@@ -119,7 +126,8 @@ public class StudentService implements IStudentService {
         System.out.println(" Không tìm thấy id");
     }
 
-    private void findInforStudentByName() {
+    private void findInforStudentByName() throws IOException {
+        students = readStudentFile("src\\bonus_homework\\work1\\data\\student.txt");
         System.out.println("Nhập name student cần tìm kiếm");
         String nameStudent = scanner.nextLine();
         boolean check = false;
@@ -135,7 +143,8 @@ public class StudentService implements IStudentService {
     }
 
 
-    private Student findStudent() {
+    private Student findStudent() throws IOException {
+       students = readStudentFile("src\\bonus_homework\\work1\\data\\student.txt");
         System.out.print("Mời bạn nhập vào id cần xóa hoặc chỉnh sửa: ");
         int id = Integer.parseInt(scanner.nextLine());
 //        for (int i = 0; i < students.size(); i++) {
@@ -151,8 +160,8 @@ public class StudentService implements IStudentService {
         return null;
     }
 
-    private Student infoStudent() {
-
+    private Student infoStudent() throws IOException {
+        students = readStudentFile("src\\bonus_homework\\work1\\data\\student.txt");
         int id;
         while (true) {
             try {
@@ -226,6 +235,21 @@ public class StudentService implements IStudentService {
                 System.out.println(e.getMessage());
             }
         }
+        String nameClass;
+        while (true) {
+            try {
+                System.out.print("Mời bạn nhập tên lớp: ");
+                nameClass = scanner.nextLine();
+                if (!nameClass.matches("\\D+\\d+\\d+\\d+\\d+\\D+\\d")) {
+                    throw new NameClassException("Tên lớp không hợp lệ");
+                }
+                break;
+            } catch (NameClassException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
         double point;
         while (true) {
             try {
@@ -243,22 +267,30 @@ public class StudentService implements IStudentService {
                 System.out.println(e.getMessage());
             }
         }
-        String nameClass;
-        while (true) {
-            try {
-                System.out.print("Mời bạn nhập tên lớp: ");
-                nameClass = scanner.nextLine();
-                if (!nameClass.matches("\\D+\\d+\\d+\\d+\\d+\\D+\\d")) {
-                    throw new NameClassException("Tên lớp không hợp lệ");
-                }
-                break;
-            } catch (NameClassException e) {
-                System.out.println(e.getMessage());
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-        }
+
         Student student = new Student(id, name, dateOfBirth, gender, nameClass, point);
         return student;
+    }
+
+    public static void writeStudentFile(String path, List<Student> students) throws IOException {
+        String data = "";
+        for (Student student : students) {
+            data += student.toString();
+            data += "\n";
+        }
+
+        WriteFileUtil.writeFile(path, data);
+    }
+
+    public static List<Student> readStudentFile(String path) throws IOException {
+        List<String> strings = ReadFileUtil.readFile(path);
+        List<Student> students = new ArrayList<>();
+        String[] info;
+        for (String line : strings) {
+            info = line.split(",");
+            students.add(new Student(Integer.parseInt(info[0]), info[1], info[2], info[3], info[4], Double.parseDouble(info[5])));
+        }
+
+        return students;
     }
 }

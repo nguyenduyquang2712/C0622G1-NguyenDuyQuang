@@ -1,35 +1,34 @@
 package bonus_homework.work1.service.impl;
 
-import bonus_homework.work1.model.Student;
 import bonus_homework.work1.model.Teacher;
 import bonus_homework.work1.service.ITeacherService;
-import bonus_homework.work1.utils.DateOfBirthException;
-import bonus_homework.work1.utils.GenderException;
-import bonus_homework.work1.utils.NameException;
-import bonus_homework.work1.utils.QualificationException;
+import bonus_homework.work1.utils.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class TeacherService implements ITeacherService {
     private static Scanner scanner = new Scanner(System.in);
-    private static List<Teacher> teachers = new ArrayList<>();
+    private static List<Teacher> teachers;
 
-    static {
-        teachers.add(new Teacher(1, "quang", "12/12/12", "nam", "tutor"));
-        teachers.add(new Teacher(2, "hai", "12/12/12", "nam", "coach"));
-    }
+//    static {
+//        teachers.add(new Teacher(1, "quang", "12/12/12", "nam", "tutor"));
+//        teachers.add(new Teacher(2, "hai", "12/12/12", "nam", "coach"));
+//    }
 
     @Override
-    public void showAllTeacher() {
+    public void showAllTeacher() throws IOException {
+        sortTeacher();
         for (Teacher teacher : teachers
         ) {
             System.out.println(teacher);
         }
     }
 
-    private void sortTeacher() {
+    private void sortTeacher() throws IOException {
+        teachers = readTeacherFile("src\\bonus_homework\\work1\\data\\teacher.txt");
         boolean isSwap = true;
         for (int i = 0; i < teachers.size() - 1 && isSwap; i++) {
             isSwap = false;
@@ -42,17 +41,19 @@ public class TeacherService implements ITeacherService {
                 }
             }
         }
+        writeTeacherFile("src\\bonus_homework\\work1\\data\\teacher.txt",teachers);
     }
 
     @Override
-    public void addTeacher() {
+    public void addTeacher() throws IOException {
         Teacher teacher = this.infoTeacher();
         teachers.add(teacher);
         System.out.println("Thêm mới giảng viên thành công");
+        writeTeacherFile("src\\bonus_homework\\work1\\data\\teacher.txt",teachers);
     }
 
     @Override
-    public void removeTeacher() {
+    public void removeTeacher() throws IOException {
         Teacher teacher = this.findTeacher();
         if (teacher == null) {
             System.out.println("Không tìm thấy đối tượng cần xóa");
@@ -66,11 +67,12 @@ public class TeacherService implements ITeacherService {
                 System.out.println("Xóa thành công");
             }
         }
+        writeTeacherFile("src\\bonus_homework\\work1\\data\\teacher.txt",teachers);
 
     }
 
     @Override
-    public void searchTeacher() {
+    public void searchTeacher() throws IOException {
         while (true) {
             System.out.println("1. Tìm kiếm giảng viên theo ID");
             System.out.println("2. Tìm kiếm giảng viên theo tên");
@@ -93,7 +95,8 @@ public class TeacherService implements ITeacherService {
         }
     }
 
-    private void findInforTeacherByName() {
+    private void findInforTeacherById() throws IOException {
+        teachers = readTeacherFile("src\\bonus_homework\\work1\\data\\teacher.txt");
         System.out.println("Nhập ID giảng viên cần tìm kiếm: ");
         int id = Integer.parseInt(scanner.nextLine());
         for (Teacher teacher : teachers) {
@@ -105,7 +108,8 @@ public class TeacherService implements ITeacherService {
         System.out.println(" Không tìm thấy id");
     }
 
-    private void findInforTeacherById() {
+    private void findInforTeacherByName() throws IOException {
+        teachers = readTeacherFile("src\\bonus_homework\\work1\\data\\teacher.txt");
         System.out.println("Nhập name giảng viên cần tìm kiếm");
         String nameStudent = scanner.nextLine();
         boolean check = false;
@@ -121,7 +125,8 @@ public class TeacherService implements ITeacherService {
     }
 
 
-    private Teacher findTeacher() {
+    private Teacher findTeacher() throws IOException {
+        teachers = readTeacherFile("src\\bonus_homework\\work1\\data\\teacher.txt");
         System.out.print("Mời bạn nhập vào id cần xóa: ");
         int id = Integer.parseInt(scanner.nextLine());
 //        for (int i = 0; i < teachers.size(); i++) {
@@ -137,7 +142,8 @@ public class TeacherService implements ITeacherService {
         return null;
     }
 
-    private Teacher infoTeacher() {
+    private Teacher infoTeacher() throws IOException {
+        teachers = readTeacherFile("src\\bonus_homework\\work1\\data\\teacher.txt");
         int id;
         while (true) {
             try {
@@ -232,5 +238,27 @@ public class TeacherService implements ITeacherService {
         }
         Teacher teacher = new Teacher(id, name, dateOfBirth, gender, qualification);
         return teacher;
+    }
+
+    public static void writeTeacherFile(String path, List<Teacher> teachers) throws IOException {
+        String data = "";
+        for (Teacher teacher : teachers) {
+            data += teacher.toString();
+            data += "\n";
+        }
+
+        WriteFileUtil.writeFile(path, data);
+    }
+
+    public static List<Teacher> readTeacherFile(String path) throws IOException {
+        List<String> strings = ReadFileUtil.readFile(path);
+        List<Teacher> teachers = new ArrayList<>();
+        String[] info;
+        for (String line : strings) {
+            info = line.split(",");
+            teachers.add(new Teacher(Integer.parseInt(info[0]), info[1], info[2], info[3], info[4]));
+        }
+
+        return teachers;
     }
 }
