@@ -33,6 +33,7 @@ public class FileCopy {
         int count = 0;
         while ((line = bufferedReader.readLine()) != null) {
             bufferedWriter.write(line);
+            bufferedWriter.newLine();
             line = line.replaceAll(" ", "");
             count += line.length();
         }
