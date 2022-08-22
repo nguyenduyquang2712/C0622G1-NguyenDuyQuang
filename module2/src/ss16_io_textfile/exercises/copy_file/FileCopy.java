@@ -30,10 +30,16 @@ public class FileCopy {
         }
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         String line;
+        int count = 0;
+        char c = 0;
         while ((line = bufferedReader.readLine()) != null) {
             bufferedWriter.write(line);
+            line = line.replaceAll(" ", "");
+            count = line.length();
         }
         bufferedReader.close();
         bufferedWriter.close();
+        System.out.println("Số kí tự trong chuỗi là: " + count);
     }
 }
+

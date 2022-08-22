@@ -10,6 +10,7 @@ import java.util.*;
 public class StudentService implements IStudentService {
     private static Scanner scanner = new Scanner(System.in);
     private static List<Student> students = new ArrayList<>();
+    private static String PATH_NAME_FILE_STUDENT = "src\\bonus_homework\\work1\\data\\student.txt";
 
     static {
         students.add(new Student(1, "Nguyen van quang", "12/12/12", "nam", "c0622g1", 1));
@@ -23,7 +24,7 @@ public class StudentService implements IStudentService {
         Student student = this.infoStudent();
         students.add(student);
         System.out.println("Thêm mới học sinh thành công");
-        writeStudentFile("src\\bonus_homework\\work1\\data\\student.txt", students);
+        writeStudentFile(PATH_NAME_FILE_STUDENT, students);
     }
 
     @Override
@@ -36,7 +37,7 @@ public class StudentService implements IStudentService {
     }
 
     private void sortStudent() throws IOException {
-        students = readStudentFile("src\\bonus_homework\\work1\\data\\student.txt");
+        students = readStudentFile(PATH_NAME_FILE_STUDENT);
         boolean isSwap = true;
         Student newStudent;
         for (int i = 0; i < students.size() - 1 && isSwap; i++) {
@@ -50,7 +51,7 @@ public class StudentService implements IStudentService {
                 }
             }
         }
-        writeStudentFile("src\\bonus_homework\\work1\\data\\student.txt", students);
+        writeStudentFile(PATH_NAME_FILE_STUDENT, students);
     }
 
 
@@ -70,7 +71,7 @@ public class StudentService implements IStudentService {
                 System.out.println("Xóa thành công");
             }
         }
-        writeStudentFile("src\\bonus_homework\\work1\\data\\student.txt", students);
+        writeStudentFile(PATH_NAME_FILE_STUDENT, students);
     }
 
     @Override
@@ -85,12 +86,12 @@ public class StudentService implements IStudentService {
                 }
             }
         }
-        writeStudentFile("src\\bonus_homework\\work1\\data\\student.txt",students);
+        writeStudentFile(PATH_NAME_FILE_STUDENT,students);
     }
 
     @Override
     public void findInforStudent() throws IOException {
-        students = readStudentFile("src\\bonus_homework\\work1\\data\\student.txt");
+        students = readStudentFile(PATH_NAME_FILE_STUDENT);
         while (true) {
             System.out.println("1. Tìm kiếm sinh viên theo ID");
             System.out.println("2. Tìm kiếm sinh viên theo tên");
@@ -114,7 +115,7 @@ public class StudentService implements IStudentService {
     }
 
     private void findInforStudentById() throws IOException {
-        students = readStudentFile("src\\bonus_homework\\work1\\data\\student.txt");
+        students = readStudentFile(PATH_NAME_FILE_STUDENT);
         System.out.println("Nhập ID cần tìm kiếm: ");
         int id = Integer.parseInt(scanner.nextLine());
         for (Student student : students) {
@@ -127,7 +128,7 @@ public class StudentService implements IStudentService {
     }
 
     private void findInforStudentByName() throws IOException {
-        students = readStudentFile("src\\bonus_homework\\work1\\data\\student.txt");
+        students = readStudentFile(PATH_NAME_FILE_STUDENT);
         System.out.println("Nhập name student cần tìm kiếm");
         String nameStudent = scanner.nextLine();
         boolean check = false;
@@ -144,7 +145,7 @@ public class StudentService implements IStudentService {
 
 
     private Student findStudent() throws IOException {
-       students = readStudentFile("src\\bonus_homework\\work1\\data\\student.txt");
+       students = readStudentFile(PATH_NAME_FILE_STUDENT);
         System.out.print("Mời bạn nhập vào id cần xóa hoặc chỉnh sửa: ");
         int id = Integer.parseInt(scanner.nextLine());
 //        for (int i = 0; i < students.size(); i++) {
@@ -161,7 +162,7 @@ public class StudentService implements IStudentService {
     }
 
     private Student infoStudent() throws IOException {
-        students = readStudentFile("src\\bonus_homework\\work1\\data\\student.txt");
+        students = readStudentFile(PATH_NAME_FILE_STUDENT);
         int id;
         while (true) {
             try {
