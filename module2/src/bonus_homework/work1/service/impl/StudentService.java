@@ -12,12 +12,12 @@ public class StudentService implements IStudentService {
     private static List<Student> students = new ArrayList<>();
     private static String PATH_NAME_FILE_STUDENT = "src\\bonus_homework\\work1\\data\\student.txt";
 
-    static {
-        students.add(new Student(1, "Nguyen van quang", "12/12/12", "nam", "c0622g1", 1));
-        students.add(new Student(2, "Nguyen van hai", "12/12/12", "nam", "c0622g1", 7));
-        students.add(new Student(4, "Le dinh anh", "12/2/12", "nu", "c0622g1", 6));
-        students.add(new Student(5, "Nguyen binh", "11/11/11", "nam", "c0922g1", 5));
-    }
+//    static {
+//        students.add(new Student(1, "Nguyen van quang", "12/12/12", "nam", "c0622g1", 1));
+//        students.add(new Student(2, "Nguyen van hai", "12/12/12", "nam", "c0622g1", 7));
+//        students.add(new Student(4, "Le dinh anh", "12/2/12", "nu", "c0622g1", 6));
+//        students.add(new Student(5, "Nguyen binh", "11/11/11", "nam", "c0922g1", 5));
+//    }
 
     @Override
     public void addStudent() throws IOException {
@@ -86,7 +86,7 @@ public class StudentService implements IStudentService {
                 }
             }
         }
-        writeStudentFile(PATH_NAME_FILE_STUDENT,students);
+        writeStudentFile(PATH_NAME_FILE_STUDENT, students);
     }
 
     @Override
@@ -145,7 +145,7 @@ public class StudentService implements IStudentService {
 
 
     private Student findStudent() throws IOException {
-       students = readStudentFile(PATH_NAME_FILE_STUDENT);
+        students = readStudentFile(PATH_NAME_FILE_STUDENT);
         System.out.print("Mời bạn nhập vào id cần xóa hoặc chỉnh sửa: ");
         int id = Integer.parseInt(scanner.nextLine());
 //        for (int i = 0; i < students.size(); i++) {
@@ -163,28 +163,39 @@ public class StudentService implements IStudentService {
 
     private Student infoStudent() throws IOException {
         students = readStudentFile(PATH_NAME_FILE_STUDENT);
+//        int id;
+//        while (true) {
+//            try {
+//                System.out.print("Mời bạn nhập id: ");
+//                id = Integer.parseInt(scanner.nextLine());
+//                boolean check = true;
+//                for (Student student : students) {
+//                    if (student.getId() == id) {
+//                        System.out.println("ID bị trùng, mời bạn nhập lại id");
+//                        id = Integer.parseInt(scanner.nextLine());
+//                        check = false;
+//                        break;
+//                    }
+//                }
+//                if (check) break;
+//            } catch (NumberFormatException e) {
+//                System.out.println("Mời bạn nhập lại id");
+//            } catch (Exception e) {
+//                System.out.println(e.getMessage());
+//            }
+//        }
         int id;
-        while (true) {
-            try {
-                System.out.print("Mời bạn nhập id: ");
-                id = Integer.parseInt(scanner.nextLine());
-                boolean check = true;
-                for (Student student : students) {
-                    if (student.getId() == id) {
-                        System.out.println("ID bị trùng, mời bạn nhập lại id");
-                        id = Integer.parseInt(scanner.nextLine());
-                        check = false;
-                        break;
-                    }
+        if (students.size() == 0) {
+            id = 1;
+        } else {
+            int nextId = students.get(0).getId();
+            for (Student student : students) {
+                if (nextId < student.getId()) {
+                    nextId = student.getId();
                 }
-                if (check) break;
-            } catch (NumberFormatException e) {
-                System.out.println("Mời bạn nhập lại id");
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
             }
+            id = nextId + 1;
         }
-
         String name;
         while (true) {
             try {
@@ -283,6 +294,7 @@ public class StudentService implements IStudentService {
         WriteFileUtil.writeFile(path, data);
     }
 
+
     public static List<Student> readStudentFile(String path) throws IOException {
         List<String> strings = ReadFileUtil.readFile(path);
         List<Student> students = new ArrayList<>();
@@ -291,7 +303,6 @@ public class StudentService implements IStudentService {
             info = line.split(",");
             students.add(new Student(Integer.parseInt(info[0]), info[1], info[2], info[3], info[4], Double.parseDouble(info[5])));
         }
-
-        return students;
+            return students;
     }
 }

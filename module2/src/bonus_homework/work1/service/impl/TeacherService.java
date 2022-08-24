@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class TeacherService implements ITeacherService {
+public class TeacherService  implements ITeacherService {
     private static Scanner scanner = new Scanner(System.in);
     private static List<Teacher> teachers;
-    private static String PATH_NAME_FILE_TEACHER = "src\\bonus_homework\\work1\\data\\teacher.txt";
+    private static String PATH_NAME_FILE_TEACHER = "src\\bonus_homework\\work1\\data\\student.txt";
 
 //    static {
 //        teachers.add(new Teacher(1, "quang", "12/12/12", "nam", "tutor"));
@@ -257,7 +257,9 @@ public class TeacherService implements ITeacherService {
         String[] info;
         for (String line : strings) {
             info = line.split(",");
-            teachers.add(new Teacher(Integer.parseInt(info[0]), info[1], info[2], info[3], info[4]));
+            if (info.length == 4) {
+                teachers.add(new Teacher(Integer.parseInt(info[0]), info[1], info[2], info[3], info[4]));
+            }
         }
 
         return teachers;
