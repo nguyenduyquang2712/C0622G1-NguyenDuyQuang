@@ -201,14 +201,9 @@ public class StudentService implements IStudentService {
             try {
                 System.out.print("Mời bạn nhập tên: ");
                 name = (scanner.nextLine());
-                String str;
-                for (int i = 0; i < name.length(); i++) {
-                    str = "";
-                    if ((str + name.charAt(i)).matches("\\d+")) {
-                        throw new NameException("Tên bạn nhập ko hợp lệ");
+                if (!name.toLowerCase().matches("[A-Za-zvxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđ ]{5,50}")) {
+                        throw new NameException("Tên bạn nhập ko hợp lệ, mời nhập lại!");
                     }
-                }
-
                 break;
             } catch (NameException e) {
                 System.out.println(e.getMessage());
@@ -252,7 +247,7 @@ public class StudentService implements IStudentService {
             try {
                 System.out.print("Mời bạn nhập tên lớp: ");
                 nameClass = scanner.nextLine();
-                if (!nameClass.matches("\\D+\\d+\\d+\\d+\\d+\\D+\\d")) {
+                if (nameClass.matches("(A|C)[\\d]{4}(G|I)[1]")) {
                     throw new NameClassException("Tên lớp không hợp lệ");
                 }
                 break;

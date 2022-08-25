@@ -171,14 +171,9 @@ public class TeacherService  implements ITeacherService {
             try {
                 System.out.print("Mời bạn nhập tên: ");
                 name = (scanner.nextLine());
-                String str;
-                for (int i = 0; i < name.length(); i++) {
-                    str = "";
-                    if ((str + name.charAt(i)).matches("\\d+")) {
+                if (!name.toLowerCase().matches("[A-Za-zvxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđ ]{5,50}")) {
                         throw new NameException("Tên bạn nhập ko hợp lệ");
                     }
-                }
-
                 break;
             } catch (NameException e) {
                 System.out.println(e.getMessage());
@@ -203,7 +198,6 @@ public class TeacherService  implements ITeacherService {
             }
         }
         String gender;
-        String genderString;
         while (true) {
             try {
                 System.out.print("Mời bạn nhập giới tính: ");

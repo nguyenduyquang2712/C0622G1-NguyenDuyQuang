@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
 
-public class ReadBinary {
+public class ReadBinary  {
     public static <E> List<E> ReadFile(String path, List<E> objectlist) throws IOException, ClassNotFoundException {
        try{ FileInputStream fileInputStream = new FileInputStream(path);
         ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
