@@ -1,28 +1,28 @@
 package case_study.model.contract;
 
 public class Contract {
-    private long numberContract;
+    private String numberContract;
     private String bookingId;
-    private long advanceDepositAmount;
-    private long totalPaymentAmount;
-    private String contractId;
+    private double advanceDepositAmount;
+    private double totalPaymentAmount;
+    private String customerID;
 
     public Contract() {
     }
 
-    public Contract(long numberContract, String bookingId, long advanceDepositAmount, long totalPaymentAmount, String contractId) {
+    public Contract(String numberContract, String bookingId, double advanceDepositAmount, double totalPaymentAmount, String customerID) {
         this.numberContract = numberContract;
         this.bookingId = bookingId;
         this.advanceDepositAmount = advanceDepositAmount;
         this.totalPaymentAmount = totalPaymentAmount;
-        this.contractId = contractId;
+        this.customerID = customerID;
     }
 
-    public long getNumberContract() {
+    public String getNumberContract() {
         return numberContract;
     }
 
-    public void setNumberContract(long numberContract) {
+    public void setNumberContract(String numberContract) {
         this.numberContract = numberContract;
     }
 
@@ -34,38 +34,39 @@ public class Contract {
         this.bookingId = bookingId;
     }
 
-    public long getAdvanceDepositAmount() {
+    public double getAdvanceDepositAmount() {
         return advanceDepositAmount;
     }
 
-    public void setAdvanceDepositAmount(long advanceDepositAmount) {
+    public void setAdvanceDepositAmount(double advanceDepositAmount) {
         this.advanceDepositAmount = advanceDepositAmount;
     }
 
-    public long getTotalPaymentAmount() {
+    public double getTotalPaymentAmount() {
         return totalPaymentAmount;
     }
 
-    public void setTotalPaymentAmount(long totalPaymentAmount) {
+    public void setTotalPaymentAmount(double totalPaymentAmount) {
         this.totalPaymentAmount = totalPaymentAmount;
     }
 
-    public String getContractId() {
-        return contractId;
+    public String getcustomerID() {
+        return customerID;
     }
 
-    public void setContractId(String contractId) {
-        this.contractId = contractId;
+    public void setcustomerID(String customerID) {
+        this.customerID = customerID;
     }
 
     @Override
     public String toString() {
-        return "Contract{" +
-                "numberContract=" + numberContract +
-                ", bookingId='" + bookingId + '\'' +
-                ", advanceDepositAmount=" + advanceDepositAmount +
-                ", totalPaymentAmount=" + totalPaymentAmount +
-                ", contractId='" + contractId + '\'' +
-                '}';
+//        return "Contract{" +
+//                "numberContract=" + numberContract +
+//                ", bookingId='" + bookingId + '\'' +
+//                ", advanceDepositAmount=" + advanceDepositAmount +
+//                ", totalPaymentAmount=" + totalPaymentAmount +
+//                ", customerID='" + customerID + '\'' +
+//                '}';
+        return String.format("%s,%s,%s,%s,%s",numberContract,bookingId,advanceDepositAmount,totalPaymentAmount,customerID);
     }
 }

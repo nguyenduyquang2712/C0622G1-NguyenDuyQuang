@@ -11,11 +11,12 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", dateOfBirth='" + dateOfBirth + '\'' +
-                '}';
+//        return "Person{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", dateOfBirth='" + dateOfBirth + '\'' +
+//                '}';
+        return String.format("%s,%s,%s,%s",id,name,dateOfBirth,sex);
     }
 
     public Person(int id, String name, String dateOfBirth,String sex) {

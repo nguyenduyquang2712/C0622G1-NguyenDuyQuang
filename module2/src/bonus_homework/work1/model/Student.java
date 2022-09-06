@@ -19,7 +19,7 @@ public class Student extends Person {
 //                " ,score = " + score +
 //                " ,nameClass = '" + nameClass +
 //                "} ";
-      return String.format("%s,%s,%s,%s,%s,%s", this.getId(), this.getName(), this.getDateOfBirth(),this.getSex(),nameClass,score);
+      return String.format("%s,%s,%s", super.toString(),nameClass,score);
     }
 
     public Student(double score, String nameClass) {

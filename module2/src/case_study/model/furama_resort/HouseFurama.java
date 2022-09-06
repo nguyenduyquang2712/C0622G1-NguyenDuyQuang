@@ -1,5 +1,7 @@
 package case_study.model.furama_resort;
 
+import java.util.Objects;
+
 public class HouseFurama extends Facility {
     private String roomStandard;
     private int numberOfFloors;
@@ -9,8 +11,8 @@ public class HouseFurama extends Facility {
         this.numberOfFloors = numberOfFloors;
     }
 
-    public HouseFurama(String nameService, double usableArea, double rentalCost, int maxNumberOfPeople, String rentalType, String roomStandard, int numberOfFloors) {
-        super(nameService, usableArea, rentalCost, maxNumberOfPeople, rentalType);
+    public HouseFurama(String nameService, double usableArea, double rentalCost, int maxNumberOfPeople, String rentalType, String serviceCode, String roomStandard, int numberOfFloors) {
+        super(nameService, usableArea, rentalCost, maxNumberOfPeople, rentalType, serviceCode);
         this.roomStandard = roomStandard;
         this.numberOfFloors = numberOfFloors;
     }
@@ -33,9 +35,11 @@ public class HouseFurama extends Facility {
 
     @Override
     public String toString() {
-        return  super.toString()+
-                "roomStandard='" + roomStandard + '\'' +
-                ", numberOfFloors=" + numberOfFloors +
-                '}';
+//        return  super.toString()+
+//                "roomStandard='" + roomStandard + '\'' +
+//                ", numberOfFloors=" + numberOfFloors +
+//                '}';
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s",getNameService(),getUsableArea(),getRentalCost(),getMaxNumberOfPeople(),getRentalType(), getServiceID(),getRoomStandard(),getNumberOfFloors());
     }
+
 }

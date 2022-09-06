@@ -1,5 +1,7 @@
 package case_study.model.person;
 
+import java.util.Objects;
+
 public class Customer extends Person {
     private String customerId;
     private String customerType;
@@ -11,8 +13,8 @@ public class Customer extends Person {
         this.addressCustomer = addressCustomer;
     }
 
-    public Customer(String nameEmployee, String dayOfBirth, String gender, long CMND, long numberOfPhone, String email, String customerId, String customerType, String addressCustomer) {
-        super(nameEmployee, dayOfBirth, gender, CMND, numberOfPhone, email);
+    public Customer(String nameCustomer, String dayOfBirth, String gender, long identifyCard, String numberOfPhone, String email, String customerId, String customerType, String addressCustomer) {
+        super(nameCustomer, dayOfBirth, gender, identifyCard, numberOfPhone, email);
         this.customerId = customerId;
         this.customerType = customerType;
         this.addressCustomer = addressCustomer;
@@ -44,10 +46,28 @@ public class Customer extends Person {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "customerId='" + customerId + '\'' +
-                ", customerType='" + customerType + '\'' +
-                ", addressCustomer='" + addressCustomer + '\'' +
-                '}';
+//        return super.toString()+
+//                "Customer{" +
+//                "customerId='" + customerId + '\'' +
+//                ", customerType='" + customerType + '\'' +
+//                ", addressCustomer='" + addressCustomer + '\'' +
+//                '}';
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s",this.getNameEmployee(),this.getDayOfBirth(),this.getGender(),this.getidentifyCard(),this.getNumberOfPhone(),this.getEmail(),customerId,customerType,addressCustomer);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Customer){
+            Customer another = (Customer) obj;
+            if(this.customerId.equals(another.customerId)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(customerId);
     }
 }

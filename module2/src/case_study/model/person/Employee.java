@@ -3,21 +3,21 @@ package case_study.model.person;
 public class Employee extends Person {
     private String employeeId;
     private String level;
-    private String location;
+    private String workPosition;
     private double wage;
 
-    public Employee(String employeeId, String level, String location, double wage) {
+    public Employee(String employeeId, String level, String workPosition, double wage) {
         this.employeeId = employeeId;
         this.level = level;
-        this.location = location;
+        this.workPosition = workPosition;
         this.wage = wage;
     }
 
-    public Employee(String nameEmployee, String dayOfBirth, String gender, long CMND, long numberOfPhone, String email, String employeeId, String level, String location, double wage) {
-        super(nameEmployee, dayOfBirth, gender, CMND, numberOfPhone, email);
+    public Employee(String nameEmployee, String dayOfBirth, String gender, long indentyCard, String numberOfPhone, String email, String employeeId, String level, String workPosition, double wage) {
+        super(nameEmployee, dayOfBirth, gender, indentyCard, numberOfPhone, email);
         this.employeeId = employeeId;
         this.level = level;
-        this.location = location;
+        this.workPosition = workPosition;
         this.wage = wage;
     }
 
@@ -47,8 +47,8 @@ public class Employee extends Person {
         this.level = level;
     }
 
-    public String getLocation() {
-        switch (this.location) {
+    public String getworkPosition() {
+        switch (this.workPosition) {
             case "1":
                 return "Receptionist";
             case "2":
@@ -62,11 +62,11 @@ public class Employee extends Person {
             case "6":
                 return "Manager";
         }
-        return location;
+        return workPosition;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setworklPosition(String workPosition) {
+        this.workPosition = workPosition;
     }
 
     public double getWage() {
@@ -82,7 +82,7 @@ public class Employee extends Person {
         return super.toString() +
                 "employeeId='" + employeeId + '\'' +
                 ", level='" + level + '\'' +
-                ", location='" + location + '\'' +
+                ", worklPosition='" + workPosition + '\'' +
                 ", wage=" + wage +
                 '}';
     }

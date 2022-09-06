@@ -11,12 +11,13 @@ public class VillaFurama extends Facility {
         this.numberOfFloors = numberOfFloors;
     }
 
-    public VillaFurama(String nameService, double usableArea, double rentalCost, int maxNumberOfPeople, String rentalType, String roomStandard, double swimmingOfArea, int numberOfFloors) {
-        super(nameService, usableArea, rentalCost, maxNumberOfPeople, rentalType);
+    public VillaFurama(String nameService, double usableArea, double rentalCost, int maxNumberOfPeople, String rentalType, String serviceCode, String roomStandard, double swimmingOfArea, int numberOfFloors) {
+        super(nameService, usableArea, rentalCost, maxNumberOfPeople, rentalType, serviceCode);
         this.roomStandard = roomStandard;
         this.swimmingOfArea = swimmingOfArea;
         this.numberOfFloors = numberOfFloors;
     }
+
 
     public String getRoomStandard() {
         return roomStandard;
@@ -44,10 +45,11 @@ public class VillaFurama extends Facility {
 
     @Override
     public String toString() {
-        return  super.toString()+
-                "roomStandard='" + roomStandard + '\'' +
-                ", swimmingOfArea=" + swimmingOfArea +
-                ", numberOfFloors=" + numberOfFloors +
-                '}';
+//        return  super.toString()+
+//                "roomStandard='" + roomStandard + '\'' +
+//                ", swimmingOfArea=" + swimmingOfArea +
+//                ", numberOfFloors=" + numberOfFloors +
+//                '}';
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s",getNameService(),getUsableArea(),getRentalCost(),getMaxNumberOfPeople(),getRentalType(), getServiceID(),getRoomStandard(),getSwimmingOfArea(),getNumberOfFloors());
     }
 }

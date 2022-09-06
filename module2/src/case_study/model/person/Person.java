@@ -4,8 +4,8 @@ public abstract class Person {
     private String name;
     private String dayOfBirth;
     private String gender;
-    private long CMND;
-    private long numberOfPhone;
+    private long identifyCard;
+    private String numberOfPhone;
     private String email;
 
     public Person() {
@@ -36,19 +36,19 @@ public abstract class Person {
         this.gender = gender;
     }
 
-    public long getCMND() {
-        return CMND;
+    public long getidentifyCard() {
+        return identifyCard;
     }
 
-    public void setCMND(long CMND) {
-        this.CMND = CMND;
+    public void setidentifyCard(long identifyCard) {
+        this.identifyCard = identifyCard;
     }
 
-    public long getNumberOfPhone() {
+    public String getNumberOfPhone() {
         return numberOfPhone;
     }
 
-    public void setNumberOfPhone(long numberOfPhone) {
+    public void setNumberOfPhone(String numberOfPhone) {
         this.numberOfPhone = numberOfPhone;
     }
 
@@ -61,11 +61,11 @@ public abstract class Person {
     }
 
 
-    public Person(String nameEmployee, String dayOfBirth, String gender, long CMND, long numberOfPhone, String email) {
+    public Person(String nameEmployee, String dayOfBirth, String gender, long identifyCard, String numberOfPhone, String email) {
         this.name = nameEmployee;
         this.dayOfBirth = dayOfBirth;
         this.gender = gender;
-        this.CMND = CMND;
+        this.identifyCard = identifyCard;
         this.numberOfPhone = numberOfPhone;
         this.email = email;
     }
@@ -73,10 +73,10 @@ public abstract class Person {
     @Override
     public String toString() {
         return "Person{" +
-                ", nameEmployee='" + name + '\'' +
+                ", namePerson='" + name + '\'' +
                 ", dayOfBirth='" + dayOfBirth + '\'' +
                 ", gender='" + gender + '\'' +
-                ", CMND=" + CMND +
+                ", identifyCard=" + identifyCard +
                 ", numberOfPhone=" + numberOfPhone +
                 ", email='" + email+
                 '}';
