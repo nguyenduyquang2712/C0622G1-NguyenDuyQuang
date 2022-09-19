@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c15f8820-e92b-418e-af60-f5348364c1cf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../module2/src/demo/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/demo/controller/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/demo/controller/TeacherController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/demo/impl/IStudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/demo/impl/data/Student.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/demo/impl/service/StudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/demo/impl/service/TeacherService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/demo/impl/ultils/ReadFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/demo/impl/ultils/WriteFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/demo/model/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/demo/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/demo/model/Teacher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/demo/view/MainView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/exam_module2/controller/CodeGymController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/exam_module2/data/Employee.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/exam_module2/data/Student.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/exam_module2/model/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/exam_module2/model/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/exam_module2/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/exam_module2/service/IEmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/exam_module2/service/IStudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/exam_module2/service/impl/EmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/exam_module2/service/impl/StudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/exam_module2/utils/ReadFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/exam_module2/utils/WriteFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/exam_module2/view/MainView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/ss19_string_regex/practices/IdComapre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/ss19_string_regex/practices/Infor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/ss19_string_regex/practices/Iterator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/ss19_string_regex/practices/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/ss19_string_regex/practices/NameCompare.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/ss19_string_regex/practices/ReadFileInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/ss19_string_regex/practices/WriteFileInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/out/production/module2/META-INF/module2.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/out/production/module2/bonus_homework/work1/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/out/production/module2/bonus_homework/work1/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/out/production/module2/bonus_homework/work1/service/impl/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/out/production/module2/bonus_homework/work1/service/impl/StudentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/out/production/module2/bonus_homework/work1/utils/WriteFileUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/out/production/module2/bonus_homework/work1/utils/WriteFileUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/out/production/module2/case_study/controller/FuramaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/out/production/module2/case_study/controller/FuramaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/out/production/module2/case_study/data/Booking.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/out/production/module2/case_study/data/Booking.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/out/production/module2/case_study/data/Promotion.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/out/production/module2/case_study/data/Promotion.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/out/production/module2/ss19_string_regex/practices/Example.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/out/production/module2/ss19_string_regex/practices/ExampleQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/out/production/module2/ss19_string_regex/practices/ExampleQueue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/out/production/module2/ss19_string_regex/practices/ExampleTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/out/production/module2/ss19_string_regex/practices/ExampleTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/src/bonus_homework/work1/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/src/bonus_homework/work1/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/src/bonus_homework/work1/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/src/bonus_homework/work1/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/src/bonus_homework/work1/service/impl/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/src/bonus_homework/work1/service/impl/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/src/bonus_homework/work1/utils/WriteFileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/src/bonus_homework/work1/utils/WriteFileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/src/case_study/controller/FuramaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/src/case_study/controller/FuramaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/src/case_study/data/Booking.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/src/case_study/data/Booking.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/src/ss19_string_regex/practices/Example.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/src/ss19_string_regex/practices/ExampleQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/src/ss19_string_regex/practices/ExampleQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/src/ss19_string_regex/practices/ExampleTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/src/ss19_string_regex/practices/ExampleTime.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2EWTTLDPm5Cg5VPwoo75AI2yXlN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../C0622G1_Module3/module_3" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c15f8820-e92b-418e-af60-f5348364c1cf" name="Default Changelist" comment="" />
+      <created>1662710346053</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662710346053</updated>
+      <workItem from="1662710348760" duration="48000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="100" key="FileChooserDialogImpl" timestamp="1662710395336">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="421" y="100" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1662710395336" />
+  </component>
+</project>

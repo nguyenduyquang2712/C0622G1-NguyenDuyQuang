@@ -9,6 +9,12 @@ import java.util.Set;
 
 public class ExampleTime {
     private static LocalDate dateNow = LocalDate.now();
+    public void leak(int a){
+
+    }
+    public static String leak(){
+        return "";
+    }
     public static void main(String[] args) {
         Map<String,Integer> stringIntegerMap = new LinkedHashMap<>();
         System.out.println(stringIntegerMap.keySet());

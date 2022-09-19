@@ -279,7 +279,7 @@ public class StudentService implements IStudentService {
         return student;
     }
 
-    public static void writeStudentFile(String path, List<Student> students) throws IOException {
+    public static void writeStudentFile(String path, List<Student> students){
         String data = "";
         for (Student student : students) {
             data += student.toString();
@@ -290,8 +290,13 @@ public class StudentService implements IStudentService {
     }
 
 
-    public static List<Student> readStudentFile(String path) throws IOException {
-        List<String> strings = ReadFileUtil.readFile(path);
+    public static List<Student> readStudentFile(String path)  {
+        List<String> strings = null;
+        try {
+            strings = ReadFileUtil.readFile(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         List<Student> students = new ArrayList<>();
         String[] info;
         for (String line : strings) {

@@ -16,16 +16,20 @@ public class MainController {
             try {
                 System.out.println("Mời bạn nhập chức năng");
                 int choice = Integer.parseInt(scanner.nextLine());
-                if (choice == 1) {
+                switch (choice){
+                    case 1:
                     teacherController.menuManagementTeacher();
-                } else if (choice == 2) {
+                    break;
+                    case 2:
                     studentController.menuManagementStudent();
-                } else if (choice == 3) {
+                    break;
+                    case 3:
                     return;
-                } else {
+                    default:
                     System.out.println("Bạn đã chọn sai số, mời nhập lại chức năng");
-                }
+                    break;
             }
+                }
             catch (NumberFormatException e){
                 System.out.println("Không đúng định dạng số, mời nhập lại");
         }
